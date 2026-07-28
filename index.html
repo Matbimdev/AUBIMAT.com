@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AUBIMAT — Revit productivity add-in</title>
+  <meta name="description" content="AUBIMAT is a Revit add-in that automates architectural, structural and MEP BIM tasks. Ceilings, floors, finish walls, CAD-to-Revit, clash detection and more." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- ===================== Header ===================== -->
+  <header class="site-header">
+    <a class="brand" href="#top">
+      <img src="assets/logo.png" alt="AUBIMAT" class="brand-logo" />
+    </a>
+    <nav class="site-nav">
+      <a href="#tools">Tools</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#account">Sign in</a>
+      <a href="#account" class="btn btn-primary btn-sm" data-auth-tab="register">Get AUBIMAT</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ===================== Hero ===================== -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="badge">Autodesk Revit 2022–2026</span>
+        <h1>Automate the tedious parts of your BIM workflow.</h1>
+        <p class="hero-sub">
+          AUBIMAT adds a toolkit of one-click commands to Revit — ceilings and floors from
+          walls, CAD-to-Revit conversion, clash detection, QA fixes and more. Built by a BIM
+          specialist, for BIM specialists.
+        </p>
+        <div class="hero-cta">
+          <a href="#account" class="btn btn-primary" data-auth-tab="register">Get started — $4.99</a>
+          <a href="#tools" class="btn btn-ghost">See the tools</a>
+        </div>
+        <p class="hero-note">One-time price · Works on Revit 2022 through 2026</p>
+      </div>
+      <div class="hero-art">
+        <img src="assets/logo.png" alt="" />
+      </div>
+    </section>
+
+    <!-- ===================== Tools ===================== -->
+    <section id="tools" class="section">
+      <div class="section-head">
+        <h2>What's inside</h2>
+        <p>Ten production-ready commands, grouped by discipline.</p>
+      </div>
+      <div class="tools-grid" id="tools-grid"><!-- cards injected by app.js --></div>
+    </section>
+
+    <!-- ===================== Pricing ===================== -->
+    <section id="pricing" class="section pricing">
+      <div class="price-card">
+        <h2>Simple pricing</h2>
+        <div class="price"><span class="currency">$</span>4.99</div>
+        <p class="price-sub">Full access to every AUBIMAT tool.</p>
+        <ul class="price-list">
+          <li>All 10 tools, all disciplines</li>
+          <li>Revit 2022 – 2026</li>
+          <li>One installer, automatic version detection</li>
+          <li>Updates as new tools ship</li>
+        </ul>
+        <a href="#account" class="btn btn-primary btn-block" data-auth-tab="register">Create your account</a>
+        <p class="price-fineprint">Payment integration coming soon — this is a preview.</p>
+      </div>
+    </section>
+
+    <!-- ===================== Account (Register / Login) ===================== -->
+    <section id="account" class="section account">
+      <div class="auth-card">
+        <div class="auth-tabs">
+          <button class="auth-tab is-active" data-tab="register">Create account</button>
+          <button class="auth-tab" data-tab="login">Sign in</button>
+        </div>
+
+        <!-- Register -->
+        <form id="register-form" class="auth-form">
+          <div class="row-2">
+            <label>First name<input name="first_name" type="text" autocomplete="given-name" required /></label>
+            <label>Last name<input name="last_name" type="text" autocomplete="family-name" required /></label>
+          </div>
+          <label>Company<input name="company" type="text" autocomplete="organization" /></label>
+          <label>Email<input name="email" type="email" autocomplete="email" required /></label>
+          <div class="row-2">
+            <label>Password<input name="password" type="password" autocomplete="new-password" minlength="8" required /></label>
+            <label>Confirm password<input name="password2" type="password" autocomplete="new-password" minlength="8" required /></label>
+          </div>
+          <label class="check">
+            <input name="consent" type="checkbox" required />
+            <span>I accept the <a href="#" target="_blank" rel="noopener">Terms &amp; Privacy</a> (Ley N° 29733).</span>
+          </label>
+          <button type="submit" class="btn btn-primary btn-block">Create account</button>
+          <p class="auth-msg" id="register-msg" role="status"></p>
+        </form>
+
+        <!-- Login -->
+        <form id="login-form" class="auth-form is-hidden">
+          <label>Email<input name="email" type="email" autocomplete="email" required /></label>
+          <label>Password<input name="password" type="password" autocomplete="current-password" required /></label>
+          <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+          <p class="auth-msg" id="login-msg" role="status"></p>
+        </form>
+
+        <!-- Signed-in panel -->
+        <div id="account-panel" class="account-panel is-hidden">
+          <h3>You're signed in</h3>
+          <dl class="account-info">
+            <div><dt>Email</dt><dd id="ap-email">—</dd></div>
+            <div><dt>License</dt><dd id="ap-status">—</dd></div>
+          </dl>
+          <button id="signout-btn" class="btn btn-ghost btn-block">Sign out</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="site-footer">
+    <img src="assets/logo.png" alt="AUBIMAT" class="footer-logo" />
+    <p>© <span id="year"></span> Mateo Lopez — AUBIMAT. All rights reserved.</p>
+    <nav>
+      <a href="#tools">Tools</a>
+      <a href="#pricing">Pricing</a>
+      <a href="mailto:soporte@aubimat.com">Contact</a>
+    </nav>
+  </footer>
+
+  <!-- Supabase JS + app -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
