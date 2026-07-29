@@ -321,11 +321,15 @@
             <input type="email" name="email" id="email" class="field" required autocomplete="email" data-i18n="form_email" placeholder="Your email" />
           </div>
 
-          <select name="subject" id="subject" class="field">
-            <option value="general" data-i18n="subj_general">Just a question</option>
-            <option value="custom" data-i18n="subj_custom">A custom tool for my office</option>
-            <option value="licence" data-i18n="subj_licence">Licence or billing</option>
-            <option value="bug" data-i18n="subj_bug">Something is broken</option>
+          <!-- Honeypot: Web3Forms discards any submission where this is checked. -->
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true" />
+
+          <select name="topic" id="topic" class="field">
+            <option value="general" data-i18n="subj_general">Questions about AUBIMAT</option>
+            <option value="custom" data-i18n="subj_custom">Custom add-in or automation development</option>
+            <option value="enterprise" data-i18n="subj_enterprise">Licensing for a company</option>
+            <option value="collab" data-i18n="subj_collab">Collaboration — interview, talk or partnership</option>
+            <option value="other" data-i18n="subj_other">Something else</option>
           </select>
 
           <textarea name="message" id="message" rows="5" class="field" required data-i18n="form_message" placeholder="What are you stuck on?"></textarea>

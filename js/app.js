@@ -13,9 +13,9 @@
   const CHECKOUT_URL = "";
   const CONTACT_EMAIL = "soporte@aubimat.com";
 
-  // TODO: free access key from https://web3forms.com (register with the address
-  // above). While it is empty the contact form stays visible but disabled.
-  const WEB3FORMS_KEY = "";
+  // Web3Forms access key for soporte@aubimat.com. Public by design — it only
+  // authorises delivery to that one address and carries no account access.
+  const WEB3FORMS_KEY = "bfa35119-2054-4bdd-8ed5-05765d183209";
 
   // LinkedIn profile shown on the About section's developer card.
   const LINKEDIN_URL = "https://www.linkedin.com/in/mateo-lopez/";
@@ -343,6 +343,12 @@
       try {
         const body = new FormData(form);
         body.append("access_key", WEB3FORMS_KEY);
+        // Web3Forms uses `subject` as the email subject line, so build a readable
+        // one from the selected topic instead of letting the raw slug through.
+        const topic = form.querySelector("#topic");
+        const label = topic.options[topic.selectedIndex].textContent.trim();
+        body.append("subject", "AUBIMAT — " + label);
+        body.append("from_name", form.querySelector("#name").value.trim() || "aubimat.com");
         const res = await fetch("https://api.web3forms.com/submit", { method: "POST", body });
         const data = await res.json();
         if (!data.success) throw new Error(data.message || "submit failed");
