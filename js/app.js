@@ -11,9 +11,9 @@
   // e.g. "https://aubimat.lemonsqueezy.com/checkout/buy/<uuid>".
   // While it is empty every "Get AUBIMAT" button falls back to the mailto below.
   const CHECKOUT_URL = "";
-  const CONTACT_EMAIL = "soporte@aubimat.com";
+  const CONTACT_EMAIL = "support@aubimat.com";
 
-  // Web3Forms access key for soporte@aubimat.com. Public by design — it only
+  // Web3Forms access key for support@aubimat.com. Public by design — it only
   // authorises delivery to that one address and carries no account access.
   const WEB3FORMS_KEY = "bfa35119-2054-4bdd-8ed5-05765d183209";
 

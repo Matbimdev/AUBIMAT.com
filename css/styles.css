@@ -93,6 +93,64 @@
   color: #e5e5e5;
 }
 
+/* ---------- Legal pages ----------
+   privacy.html is a plain document, not part of the SPA. Tailwind's
+   reset strips heading and list styling, so the prose is restyled here once
+   instead of tagging every element with utilities. */
+.legal h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 2.75rem;
+  margin-bottom: 0.9rem;
+  scroll-margin-top: 6rem;
+}
+.legal h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #e5e5e5;
+  margin-top: 1.75rem;
+  margin-bottom: 0.6rem;
+}
+.legal p,
+.legal li {
+  color: #9ca3af;
+  line-height: 1.75;
+}
+.legal p {
+  margin-bottom: 1rem;
+}
+.legal ul {
+  list-style: disc;
+  padding-left: 1.4rem;
+  margin-bottom: 1rem;
+}
+.legal li {
+  margin-bottom: 0.5rem;
+}
+.legal strong {
+  color: #e5e5e5;
+  font-weight: 600;
+}
+.legal a {
+  color: #2bb8c4;
+}
+.legal a:hover {
+  text-decoration: underline;
+}
+/* Callout for the clauses a reader should not miss (seat limit, no refunds
+   after the trial, what never leaves their machine). */
+.legal .note {
+  border-left: 3px solid rgba(43, 184, 196, 0.7);
+  background-color: rgba(43, 184, 196, 0.06);
+  border-radius: 0 0.75rem 0.75rem 0;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+.legal .note p:last-child {
+  margin-bottom: 0;
+}
+
 /* ---------- Motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   .page-section,

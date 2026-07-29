@@ -98,8 +98,8 @@
       form_send: "Send it",
       form_sending: "Sending…",
       form_ok: "✓ Got it. I'll reply shortly.",
-      form_err: "That didn't go through. Email soporte@aubimat.com directly and I'll pick it up there.",
-      form_pending: "The form isn't wired up yet — email soporte@aubimat.com in the meantime.",
+      form_err: "That didn't go through. Email support@aubimat.com directly and I'll pick it up there.",
+      form_pending: "The form isn't wired up yet — email support@aubimat.com in the meantime.",
       contact_direct: "Or skip the form",
 
       // Footer
@@ -107,7 +107,8 @@
       footer_rights: "All rights reserved.",
       footer_tools: "Tools",
       footer_pricing: "Pricing",
-      footer_contact: "Contact"
+      footer_contact: "Contact",
+      footer_privacy: "Privacy"
     },
 
     // ------------------------------------------------------------------ ES
@@ -196,8 +197,8 @@
       form_send: "Enviar",
       form_sending: "Enviando…",
       form_ok: "✓ Recibido. Te respondo pronto.",
-      form_err: "No se pudo enviar. Escribe directo a soporte@aubimat.com y lo tomo desde ahí.",
-      form_pending: "El formulario aún no está conectado — mientras tanto, escribe a soporte@aubimat.com.",
+      form_err: "No se pudo enviar. Escribe directo a support@aubimat.com y lo tomo desde ahí.",
+      form_pending: "El formulario aún no está conectado — mientras tanto, escribe a support@aubimat.com.",
       contact_direct: "O sáltate el formulario",
 
       // Pie
@@ -205,7 +206,8 @@
       footer_rights: "Todos los derechos reservados.",
       footer_tools: "Herramientas",
       footer_pricing: "Precios",
-      footer_contact: "Contacto"
+      footer_contact: "Contacto",
+      footer_privacy: "Privacidad"
     }
   };
 

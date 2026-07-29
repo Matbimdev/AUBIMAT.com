@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AUBIMAT — Privacy policy</title>
+  <meta name="description" content="What data AUBIMAT collects, why, who it is shared with, and what never leaves your computer." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+
+  <!-- Tailwind CSS (Play CDN — no build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-navy': '#1e3a5f',
+            'brand-navy-light': '#4b83c4',
+            'brand-cyan': '#2bb8c4'
+          },
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="flex flex-col min-h-screen font-sans bg-[#0a0a0a] text-gray-200 selection:bg-brand-cyan selection:text-black"
+      data-title-en="AUBIMAT — Privacy policy"
+      data-title-es="AUBIMAT — Política de privacidad">
+
+  <!-- ===================== Header ===================== -->
+  <header class="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <a href="index.html" class="flex items-center group">
+          <span class="brand-mark w-10 h-10 rounded-lg mr-3 shadow-md group-hover:scale-105 transition-transform" role="img" aria-label="AUBIMAT"></span>
+          <span class="font-extrabold text-2xl text-white tracking-tight">AUBIMAT</span>
+        </a>
+
+        <div class="flex items-center gap-6">
+          <a href="index.html" class="hidden sm:inline text-gray-400 hover:text-white font-semibold transition-colors">
+            <span data-lang="en">← Back to the site</span>
+            <span data-lang="es" hidden>← Volver al sitio</span>
+          </a>
+          <div class="flex items-center space-x-3 border-l border-gray-700 pl-4 font-bold text-sm">
+            <button onclick="setLanguage('en')" id="btn-en" title="English" class="hover:text-brand-cyan transition-colors focus:outline-none">EN</button>
+            <button onclick="setLanguage('es')" id="btn-es" title="Español" class="hover:text-brand-cyan transition-colors focus:outline-none opacity-50">ES</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 legal">
+
+      <!-- ===================================================== ENGLISH -->
+      <div data-lang="en">
+        <div class="mb-3 text-brand-cyan font-semibold tracking-wider text-sm uppercase">Legal</div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Privacy policy</h1>
+        <p class="mt-4 text-gray-500 text-sm">Version 1.0 — effective 29 July 2026</p>
+
+        <p class="mt-8">
+          This policy explains what personal data I collect when you use aubimat.com or the AUBIMAT add-in,
+          why I collect it, and who else handles it. The person responsible for that data is
+          <strong>Mateo Lopez</strong>, an independent software developer based in Lima, Peru. You can reach
+          me at <a href="mailto:support@aubimat.com">support@aubimat.com</a> about anything on this page.
+        </p>
+
+        <div class="note">
+          <p>
+            <strong>The short version: your models never leave your computer.</strong> AUBIMAT runs entirely
+            inside Revit on your machine. It does not upload, copy or transmit your models, drawings,
+            families, sheets or project information — not to me, not to anyone. The only thing it sends over
+            the network is your licence key and a machine identifier, to check that your licence is valid.
+          </p>
+        </div>
+
+        <h2>1. What I collect, and when</h2>
+
+        <h3>When you buy a licence</h3>
+        <p>
+          The purchase is handled by <strong>Lemon Squeezy</strong>, which acts as merchant of record. They
+          collect your name, email address, country and billing details, and process the payment. <strong>I
+          never see or store your card number.</strong> What reaches me is your name, your email address and
+          the country used for tax purposes, so that I can issue your licence and provide support.
+        </p>
+
+        <h3>When you activate the add-in</h3>
+        <p>
+          Activation sends your licence key and an identifier derived from your computer to the licensing
+          service, which registers the activation against your key. That identifier is what stops a single
+          key from being used on several machines at once. It does not tell me your name, your location, or
+          what you are working on.
+        </p>
+        <p>
+          The add-in stores its licence state in a small settings file inside your Windows user profile. That
+          file stays on your machine.
+        </p>
+
+        <h3>When you write to me through the site</h3>
+        <p>
+          The contact form collects your name, email address, the topic you pick and the message you write,
+          and delivers them to my inbox through <strong>Web3Forms</strong>. That is all it collects.
+        </p>
+
+        <h3>When you simply visit the site</h3>
+        <p>
+          aubimat.com is a static site hosted on <strong>GitHub Pages</strong>. There are <strong>no
+          analytics, no tracking pixels and no advertising cookies</strong> — I do not measure who visits or
+          what they read. GitHub keeps standard server logs, which include visitor IP addresses, as part of
+          operating the hosting. The page also loads fonts and a stylesheet from Google and jsDelivr/Tailwind,
+          which means those providers see your IP address when the page loads, as with any site that uses a
+          CDN.
+        </p>
+        <p>
+          The only thing the site stores in your browser is your language choice (EN or ES), kept in local
+          storage so the site stays in your language on your next visit. It is not a cookie, it is not sent
+          anywhere, and clearing your browser data removes it.
+        </p>
+
+        <h2>2. Why I collect it</h2>
+        <ul>
+          <li><strong>To provide what you bought</strong> — issue your licence, verify it, and let you move it between computers.</li>
+          <li><strong>To support you</strong> — answer your emails and diagnose problems you report.</li>
+          <li><strong>To prevent licence sharing</strong> — the machine identifier exists for this and nothing else.</li>
+          <li><strong>To meet tax and accounting obligations</strong> — handled largely by Lemon Squeezy as merchant of record.</li>
+        </ul>
+        <p>
+          I do not sell your data, I do not rent it, and I do not share it for advertising. I do not send
+          marketing email unless you ask me to.
+        </p>
+
+        <h2>3. Who else handles your data</h2>
+        <p>These are the only third parties involved, and each only receives what its job requires:</p>
+        <ul>
+          <li><strong>Lemon Squeezy</strong> — payments, invoicing, subscriptions and licence keys.</li>
+          <li><strong>Web3Forms</strong> — delivers contact form messages to my inbox.</li>
+          <li><strong>Cloudflare</strong> — the domain's DNS, and email routing for support@aubimat.com.</li>
+          <li><strong>GitHub</strong> — hosts this website.</li>
+          <li><strong>Google</strong> — serves the web font the site uses.</li>
+        </ul>
+        <p>
+          These providers operate outside Peru, so your data may be processed abroad, under their own privacy
+          terms and safeguards.
+        </p>
+
+        <h2>4. How long it is kept</h2>
+        <p>
+          Purchase and licence records are kept while you are a customer and afterwards for as long as tax
+          and accounting rules require. Contact emails are kept while they are useful for support and
+          history. If you ask me to delete what I can delete, I will — except records I am legally required
+          to keep.
+        </p>
+
+        <h2>5. Your rights</h2>
+        <p>
+          You can ask me to show you the personal data I hold about you, correct it if it is wrong, delete it,
+          or object to a particular use. Write to
+          <a href="mailto:support@aubimat.com">support@aubimat.com</a> and I will respond as quickly as I
+          reasonably can.
+        </p>
+        <p>
+          If you are in Peru, these rights come from Law No. 29733 on the Protection of Personal Data, and
+          you may also file a complaint with the National Authority for the Protection of Personal Data. If
+          you are in the European Union or the United Kingdom, the equivalent rights under the GDPR apply and
+          you may complain to your national supervisory authority.
+        </p>
+
+        <h2>6. Security</h2>
+        <p>
+          I keep the amount of personal data I hold deliberately small — it is the most effective protection
+          there is. What I do hold sits in the accounts of the providers listed above, reached over encrypted
+          connections and protected by two-factor authentication. No system is perfect, and I will not claim
+          otherwise; but AUBIMAT holds no model data, so a breach could not expose your projects.
+        </p>
+
+        <h2>7. Changes to this policy</h2>
+        <p>
+          If what I collect changes, this page changes with it, along with its version number and date. If a
+          change is significant, I will notify active customers by email.
+        </p>
+
+        <h2>8. Contact</h2>
+        <p>
+          Mateo Lopez — Lima, Peru<br />
+          <a href="mailto:support@aubimat.com">support@aubimat.com</a>
+        </p>
+        <p class="text-sm text-gray-600 mt-10">
+          The licence terms for the software itself are shown by the installer, and you accept them before
+          AUBIMAT is installed.
+        </p>
+      </div>
+
+      <!-- ===================================================== ESPAÑOL -->
+      <div data-lang="es" hidden>
+        <div class="mb-3 text-brand-cyan font-semibold tracking-wider text-sm uppercase">Legal</div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Política de privacidad</h1>
+        <p class="mt-4 text-gray-500 text-sm">Versión 1.0 — vigente desde el 29 de julio de 2026</p>
+
+        <p class="mt-8">
+          Esta política explica qué datos personales recojo cuando usas aubimat.com o el complemento AUBIMAT,
+          por qué los recojo y quién más los maneja. El responsable de esos datos es <strong>Mateo
+          Lopez</strong>, desarrollador de software independiente domiciliado en Lima, Perú. Puedes
+          escribirme a <a href="mailto:support@aubimat.com">support@aubimat.com</a> por cualquier tema de
+          esta página.
+        </p>
+
+        <div class="note">
+          <p>
+            <strong>La versión corta: tus modelos nunca salen de tu computadora.</strong> AUBIMAT se ejecuta
+            íntegramente dentro de Revit, en tu máquina. No sube, copia ni transmite tus modelos, planos,
+            familias, láminas ni información de proyecto — ni a mí ni a nadie. Lo único que envía por la red
+            es tu clave de licencia y un identificador de máquina, para comprobar que tu licencia es válida.
+          </p>
+        </div>
+
+        <h2>1. Qué recojo, y cuándo</h2>
+
+        <h3>Cuando compras una licencia</h3>
+        <p>
+          La compra la gestiona <strong>Lemon Squeezy</strong>, que actúa como comerciante registrado. Ellos
+          recogen tu nombre, correo electrónico, país y datos de facturación, y procesan el pago. <strong>Yo
+          nunca veo ni almaceno el número de tu tarjeta.</strong> Lo que llega hasta mí es tu nombre, tu
+          correo y el país usado a efectos tributarios, para poder emitir tu licencia y darte soporte.
+        </p>
+
+        <h3>Cuando activas el complemento</h3>
+        <p>
+          La activación envía tu clave de licencia y un identificador derivado de tu computadora al servicio
+          de licenciamiento, que registra la activación contra tu clave. Ese identificador es lo que impide
+          que una misma clave se use en varias máquinas a la vez. No me revela tu nombre, tu ubicación ni en
+          qué estás trabajando.
+        </p>
+        <p>
+          El complemento guarda el estado de la licencia en un pequeño archivo de configuración dentro de tu
+          perfil de usuario de Windows. Ese archivo se queda en tu máquina.
+        </p>
+
+        <h3>Cuando me escribes desde el sitio</h3>
+        <p>
+          El formulario de contacto recoge tu nombre, tu correo, el asunto que eliges y el mensaje que
+          escribes, y los entrega en mi bandeja a través de <strong>Web3Forms</strong>. Eso es todo lo que
+          recoge.
+        </p>
+
+        <h3>Cuando solo visitas el sitio</h3>
+        <p>
+          aubimat.com es un sitio estático alojado en <strong>GitHub Pages</strong>. No hay <strong>analítica,
+          ni píxeles de seguimiento, ni cookies publicitarias</strong>: no mido quién entra ni qué lee. GitHub
+          conserva registros de servidor estándar, que incluyen la dirección IP del visitante, como parte de
+          operar el alojamiento. La página también carga tipografías y una hoja de estilos desde Google y
+          Tailwind, lo que significa que esos proveedores ven tu dirección IP al cargar la página, como en
+          cualquier sitio que usa un CDN.
+        </p>
+        <p>
+          Lo único que el sitio guarda en tu navegador es tu elección de idioma (EN o ES), en almacenamiento
+          local, para que el sitio siga en tu idioma la próxima vez. No es una cookie, no se envía a ningún
+          lado, y borrar los datos del navegador lo elimina.
+        </p>
+
+        <h2>2. Para qué los recojo</h2>
+        <ul>
+          <li><strong>Para entregarte lo que compraste</strong>: emitir tu licencia, verificarla y permitirte moverla entre computadoras.</li>
+          <li><strong>Para darte soporte</strong>: responder tus correos y diagnosticar los problemas que reportes.</li>
+          <li><strong>Para evitar que se compartan licencias</strong>: el identificador de máquina existe para esto y para nada más.</li>
+          <li><strong>Para cumplir obligaciones tributarias y contables</strong>, en gran medida a cargo de Lemon Squeezy como comerciante registrado.</li>
+        </ul>
+        <p>
+          No vendo tus datos, no los alquilo y no los comparto con fines publicitarios. No envío correos de
+          marketing salvo que tú me lo pidas.
+        </p>
+
+        <h2>3. Quién más maneja tus datos</h2>
+        <p>Estos son los únicos terceros involucrados, y cada uno recibe solo lo que su función exige:</p>
+        <ul>
+          <li><strong>Lemon Squeezy</strong>: pagos, facturación, suscripciones y claves de licencia.</li>
+          <li><strong>Web3Forms</strong>: entrega los mensajes del formulario en mi bandeja.</li>
+          <li><strong>Cloudflare</strong>: el DNS del dominio y el enrutamiento de correo de support@aubimat.com.</li>
+          <li><strong>GitHub</strong>: aloja este sitio web.</li>
+          <li><strong>Google</strong>: sirve la tipografía web que usa el sitio.</li>
+        </ul>
+        <p>
+          Estos proveedores operan fuera del Perú, por lo que tus datos pueden ser tratados en el extranjero,
+          bajo sus propios términos y garantías de privacidad.
+        </p>
+
+        <h2>4. Cuánto tiempo se conservan</h2>
+        <p>
+          Los registros de compra y licencia se conservan mientras seas cliente y después durante el plazo que
+          exijan las normas tributarias y contables. Los correos de contacto se conservan mientras sean útiles
+          para el soporte y su historial. Si me pides que borre lo que puedo borrar, lo haré, salvo aquello
+          que esté legalmente obligado a conservar.
+        </p>
+
+        <h2>5. Tus derechos</h2>
+        <p>
+          Puedes pedirme que te muestre los datos personales que tengo sobre ti, que los corrija si están
+          equivocados, que los elimine, o que deje de usarlos para un fin determinado. Escribe a
+          <a href="mailto:support@aubimat.com">support@aubimat.com</a> y te responderé con la mayor prontitud
+          que razonablemente pueda.
+        </p>
+        <p>
+          Si estás en el Perú, estos derechos provienen de la Ley N.º 29733, Ley de Protección de Datos
+          Personales, y además puedes presentar un reclamo ante la Autoridad Nacional de Protección de Datos
+          Personales. Si estás en la Unión Europea o el Reino Unido, aplican los derechos equivalentes del
+          RGPD y puedes reclamar ante tu autoridad de control nacional.
+        </p>
+
+        <h2>6. Seguridad</h2>
+        <p>
+          Mantengo deliberadamente pequeña la cantidad de datos personales que guardo: es la protección más
+          eficaz que existe. Lo que sí guardo vive en las cuentas de los proveedores listados arriba, con
+          conexiones cifradas y autenticación en dos pasos. Ningún sistema es perfecto y no afirmaré lo
+          contrario; pero AUBIMAT no guarda datos de modelos, así que una brecha no podría exponer tus
+          proyectos.
+        </p>
+
+        <h2>7. Cambios a esta política</h2>
+        <p>
+          Si cambia lo que recojo, esta página cambia con ello, junto con su número de versión y su fecha. Si
+          el cambio es significativo, avisaré por correo a los clientes activos.
+        </p>
+
+        <h2>8. Contacto</h2>
+        <p>
+          Mateo Lopez — Lima, Perú<br />
+          <a href="mailto:support@aubimat.com">support@aubimat.com</a>
+        </p>
+        <p class="text-sm text-gray-600 mt-10">
+          Los términos de licencia del software los muestra el instalador, y los aceptas antes de que AUBIMAT
+          se instale.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="border-t border-white/5 bg-black/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+        <a href="index.html" class="flex items-center">
+          <span class="brand-mark w-9 h-9 rounded-lg mr-3" role="img" aria-label="AUBIMAT"></span>
+          <span class="font-extrabold text-xl text-white tracking-tight">AUBIMAT</span>
+        </a>
+        <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-400">
+          <a href="index.html" class="hover:text-white transition-colors">
+            <span data-lang="en">Back to the site</span><span data-lang="es" hidden>Volver al sitio</span>
+          </a>
+        </nav>
+      </div>
+      <p class="mt-8 pt-6 border-t border-white/5 text-xs text-gray-600">
+        © <span id="year"></span> Mateo Lopez — AUBIMAT.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/legal.js"></script>
+</body>
+</html>
