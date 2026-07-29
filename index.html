@@ -100,7 +100,7 @@
       <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 text-center">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
           <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span>
-          <span class="text-sm font-medium text-gray-200" data-i18n="hero_badge">Revit 2022 → 2026 · one installer</span>
+          <span class="text-sm font-medium text-gray-200" data-i18n="hero_badge">AUBIMAT now available</span>
         </div>
 
         <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-8" data-i18n="hero_title">
@@ -349,6 +349,33 @@
       </div>
     </section>
   </main>
+
+  <!-- ===================== Closing CTA =====================
+       Sits above the footer on every section except Contact, where it would
+       only repeat the form already on screen. Toggled from showSection(). -->
+  <aside id="cta-band" class="border-t border-white/5 bg-gradient-to-b from-transparent to-white/[0.02]">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight" data-i18n="cta_title">
+        Tell me what your office needs
+      </h2>
+      <p class="mt-4 text-gray-400" data-i18n="cta_desc">
+        A question about the catalogue, licensing for your team, or a tool that does not exist yet.
+        It reaches me directly.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="mailto:support@aubimat.com"
+           class="inline-flex items-center gap-2.5 bg-white hover:bg-gray-100 text-black px-7 py-3.5 rounded-full font-bold transition-all transform hover:-translate-y-0.5 shadow-lg">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          support@aubimat.com
+        </a>
+        <button onclick="showSection('contact')" class="text-gray-400 hover:text-white font-semibold transition-colors" data-i18n="cta_form">
+          or use the contact form
+        </button>
+      </div>
+    </div>
+  </aside>
 
   <!-- ===================== Footer ===================== -->
   <footer class="border-t border-white/5 bg-black/40">

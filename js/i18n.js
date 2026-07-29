@@ -23,7 +23,7 @@
       nav_cta: "Get AUBIMAT",
 
       // Hero
-      hero_badge: "Revit 2022 → 2026 · one installer",
+      hero_badge: "AUBIMAT now available",
       hero_title: "Automate your modelling and <br/><span class=\"text-transparent bg-clip-text bg-gradient-to-r from-brand-navy-light to-brand-cyan\">raise your BIM productivity</span>",
       hero_desc: "I built AUBIMAT to speed up the workflows that eat the most time inside Revit: modelling, quality control and project management. Every tool came out of a real problem on a real project — and if your office needs something that isn't in the catalogue, I build custom tools too.",
       hero_btn_tools: "Explore the catalogue",
@@ -102,6 +102,11 @@
       form_pending: "The form isn't wired up yet — email support@aubimat.com in the meantime.",
       contact_direct: "Or skip the form",
 
+      // Closing CTA
+      cta_title: "Tell me what your office needs",
+      cta_desc: "A question about the catalogue, licensing for your team, or a tool that does not exist yet. It reaches me directly.",
+      cta_form: "or use the contact form",
+
       // Footer
       footer_tagline: "Revit automation for modelling, quality control and BIM management. Written in Lima, Peru.",
       footer_rights: "All rights reserved.",
@@ -122,7 +127,7 @@
       nav_cta: "Obtener AUBIMAT",
 
       // Hero
-      hero_badge: "Revit 2022 → 2026 · un solo instalador",
+      hero_badge: "AUBIMAT ya disponible",
       hero_title: "Automatiza tu modelado y <br/><span class=\"text-transparent bg-clip-text bg-gradient-to-r from-brand-navy-light to-brand-cyan\">eleva tu productividad BIM</span>",
       hero_desc: "Desarrollé AUBIMAT para acelerar los flujos que más tiempo consumen dentro de Revit: modelado, control de calidad y gestión del proyecto. Cada herramienta nació de un problema real en un proyecto real — y si tu oficina necesita algo que no está en el catálogo, también desarrollo herramientas a medida.",
       hero_btn_tools: "Ver el catálogo",
@@ -200,6 +205,11 @@
       form_err: "No se pudo enviar. Escribe directo a support@aubimat.com y lo tomo desde ahí.",
       form_pending: "El formulario aún no está conectado — mientras tanto, escribe a support@aubimat.com.",
       contact_direct: "O sáltate el formulario",
+
+      // CTA de cierre
+      cta_title: "Cuéntame qué necesita tu oficina",
+      cta_desc: "Una duda del catálogo, licencias para tu equipo, o una herramienta que todavía no existe. Me llega directo.",
+      cta_form: "o usa el formulario de contacto",
 
       // Pie
       footer_tagline: "Automatización de Revit para modelado, control de calidad y gestión BIM. Escrita en Lima, Perú.",

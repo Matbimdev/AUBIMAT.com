@@ -185,6 +185,10 @@
       el.classList.toggle("text-gray-400", !active);
     });
 
+    // The closing CTA would just repeat the form when Contact is on screen.
+    const cta = document.getElementById("cta-band");
+    if (cta) cta.hidden = sectionId === "contact";
+
     window.scrollTo({ top: 0, behavior: "smooth" });
 
     if (pushHistory) {
