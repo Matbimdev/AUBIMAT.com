@@ -86,7 +86,7 @@
       // Contact
       contact_badge: "Contact",
       contact_title: "Write to <span class=\"text-brand-cyan\">me</span>",
-      contact_desc: "A bug, a licence that will not activate, or a tool you wish existed for your office. It goes straight to my inbox and I read all of it.",
+      contact_desc: "A question about the catalogue, licensing for your whole office, or a tool you wish existed. It goes straight to my inbox and I read all of it.",
       form_name: "Your name",
       form_email: "Your email",
       subj_general: "Questions about AUBIMAT",
@@ -190,7 +190,7 @@
       // Contacto
       contact_badge: "Contacto",
       contact_title: "Escríbeme",
-      contact_desc: "Un error, una licencia que no activa, o una herramienta que te gustaría que existiera para tu oficina. Llega directo a mi bandeja y lo leo todo.",
+      contact_desc: "Una duda del catálogo, licencias para toda tu oficina, o una herramienta que te gustaría que existiera. Llega directo a mi bandeja y lo leo todo.",
       form_name: "Tu nombre",
       form_email: "Tu correo",
       subj_general: "Dudas sobre AUBIMAT",
