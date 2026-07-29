@@ -164,7 +164,14 @@
   document.addEventListener("DOMContentLoaded", () => {
     renderTools();
     setYear();
-    initTabs();
-    initAuth(getClient());
+
+    // The account section is hidden in index.html while the licensing flow is
+    // being decided. Skipping init is all that disables it — the handlers above
+    // stay intact and run again as soon as the section is unhidden.
+    const account = document.getElementById("account");
+    if (account && !account.hidden) {
+      initTabs();
+      initAuth(getClient());
+    }
   });
 })();

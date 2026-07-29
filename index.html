@@ -17,8 +17,7 @@
     <nav class="site-nav">
       <a href="#tools">Tools</a>
       <a href="#pricing">Pricing</a>
-      <a href="#account">Sign in</a>
-      <a href="#account" class="btn btn-primary btn-sm" data-auth-tab="register">Get AUBIMAT</a>
+      <a href="mailto:soporte@aubimat.com?subject=AUBIMAT" class="btn btn-primary btn-sm">Get AUBIMAT</a>
     </nav>
   </header>
 
@@ -34,7 +33,7 @@
           specialist, for BIM specialists.
         </p>
         <div class="hero-cta">
-          <a href="#account" class="btn btn-primary" data-auth-tab="register">Get started — $4.99</a>
+          <a href="mailto:soporte@aubimat.com?subject=AUBIMAT" class="btn btn-primary">Get started — $4.99</a>
           <a href="#tools" class="btn btn-ghost">See the tools</a>
         </div>
         <p class="hero-note">One-time price · Works on Revit 2022 through 2026</p>
@@ -65,13 +64,16 @@
           <li>One installer, automatic version detection</li>
           <li>Updates as new tools ship</li>
         </ul>
-        <a href="#account" class="btn btn-primary btn-block" data-auth-tab="register">Create your account</a>
+        <a href="mailto:soporte@aubimat.com?subject=AUBIMAT" class="btn btn-primary btn-block">Get AUBIMAT</a>
         <p class="price-fineprint">Payment integration coming soon — this is a preview.</p>
       </div>
     </section>
 
-    <!-- ===================== Account (Register / Login) ===================== -->
-    <section id="account" class="section account">
+    <!-- ===================== Account (Register / Login) =====================
+         Hidden while the licensing flow is being decided. The markup and the
+         handlers in app.js are kept intact — removing this `hidden` attribute
+         brings the whole section back. -->
+    <section id="account" class="section account" hidden>
       <div class="auth-card">
         <div class="auth-tabs">
           <button class="auth-tab is-active" data-tab="register">Create account</button>

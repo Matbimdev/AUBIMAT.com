@@ -165,6 +165,8 @@ img { max-width: 100%; display: block; }
 .account-info dt { color: var(--muted); font-size: .9rem; margin: 0; }
 .account-info dd { margin: 0; font-weight: 600; }
 .is-hidden { display: none !important; }
+/* The `hidden` attribute must beat the display rules above (e.g. .account) */
+[hidden] { display: none !important; }
 
 /* ---------- Footer ---------- */
 .site-footer {
