@@ -24,9 +24,9 @@
 
       // Hero
       hero_badge: "Revit 2022 → 2026 · one installer",
-      hero_title: "I got tired of clicking.<br/><span class=\"text-transparent bg-clip-text bg-gradient-to-r from-brand-navy-light to-brand-cyan\">So I wrote AUBIMAT.</span>",
-      hero_desc: "Ten Revit commands that take over the parts nobody enjoys — tracing ceilings on top of walls that are already drawn, redrawing a CAD plan that already has every wall in it, hunting the one pipe that crosses a beam. Each one exists because I needed it with a deadline on top of me.",
-      hero_btn_tools: "See the ten tools",
+      hero_title: "Automate your modelling and <br/><span class=\"text-transparent bg-clip-text bg-gradient-to-r from-brand-navy-light to-brand-cyan\">raise your BIM productivity</span>",
+      hero_desc: "I built AUBIMAT to speed up the workflows that eat the most time inside Revit: modelling, quality control and project management. Every tool came out of a real problem on a real project — and if your office needs something that isn't in the catalogue, I build custom tools too.",
+      hero_btn_tools: "Explore the catalogue",
       hero_btn_get: "Get AUBIMAT",
       hero_note: "$4.99 a month · works on Revit 2022 through 2026",
 
@@ -35,7 +35,7 @@
       about_title: "A civil engineer who <span class=\"text-gray-400\">kept ending up in the code</span>",
       about_p1: "I'm Mateo Lopez, a civil engineer from Lima, Peru. I started out as a BIM coordinator on high-rises — a twelve-tower residential complex, a 22-storey building, over a million square feet of federated model to keep honest. That is where you learn exactly which parts of Revit eat your week.",
       about_p2: "So I started automating them. Dynamo first, fifty-odd scripts. Then Python and the Revit API, where I've shipped more than twenty-five tools that run daily on live projects and take 40 to 60% off the time each task used to cost.",
-      about_p3: "AUBIMAT is what happens when those ideas get rewritten properly: from scratch in C#, straight against the Revit API, fast enough to run on a real model and stable across five Revit versions. <span class=\"text-white font-medium\">None of it is a demo.</span> Every command shipped because I needed it before a delivery date.",
+      about_p3: "AUBIMAT is what happens when those ideas get rewritten properly: from scratch in C#, straight against the Revit API, fast enough to run on a real model and stable across five Revit versions. And when an office needs something the catalogue doesn't cover yet, <span class=\"text-white font-medium\">I build it to measure.</span>",
 
       // Numbers
       stat1_num: "40 – 60%",
@@ -46,17 +46,17 @@
       stat3_desc: "of high-rise model coordinated as a BIM coordinator. I know what breaks once a project gets big.",
 
       // Developer card
-      dev_badge: "The whole team",
-      dev_title: "You're buying from <span class=\"text-gray-400\">one person</span>",
+      dev_badge: "My commitment",
+      dev_title: "Here to make your team <span class=\"text-gray-400\">faster</span>",
       dev_name: "Mateo Lopez",
       dev_role: "Civil Engineer · BIM Automation Specialist · Lima, Peru",
-      dev_bio: "I write the code, I answer the emails, I fix the bugs. There is no support tier and no ticket queue — if AUBIMAT does something strange on your model, you are talking to the person who can go and change it.",
+      dev_bio: "My work is making BIM processes stop eating your day. Every AUBIMAT release comes out of listening to where people actually get stuck, and the commitment is simple: the catalogue keeps growing, the tools keep raising your productivity project after project, and you get a direct answer whenever you need one.",
       dev_connect: "Mateo Lopez on LinkedIn",
 
       // Tools
-      tools_badge: "What you get",
-      tools_title: "Ten commands, <span class=\"text-brand-cyan\">five disciplines</span>",
-      tools_desc: "All of it ships in one installer. No add-on packs, no per-tool licences — if it is on this page, it is in your ribbon.",
+      tools_badge: "The catalogue",
+      tools_title: "Tools for <span class=\"text-brand-cyan\">every discipline</span>",
+      tools_desc: "Architecture, structure, MEP, quality control and views. All of it ships in one installer — no add-on packs, no per-tool licences.",
       disc_architecture: "Architecture",
       disc_structure: "Structure",
       disc_mep: "MEP",
@@ -65,12 +65,12 @@
 
       // Pricing
       price_badge: "Pricing",
-      price_title: "One price. <span class=\"text-brand-cyan\">No asterisks.</span>",
-      price_desc: "No per-tool licences, no upgrade fee when Revit 2027 turns up, and a seat you can move to a new laptop yourself.",
-      price_plan: "AUBIMAT — everything included",
+      price_title: "The whole catalogue, <span class=\"text-brand-cyan\">one price</span>",
+      price_desc: "My best tools for every discipline, at the best price. No per-tool licences and nothing more to pay when a new Revit version lands.",
+      price_plan: "AUBIMAT — full catalogue",
       price_period: "/month",
-      price_sub: "All ten tools. Every supported Revit version. Every update.",
-      price_f1: "All 10 tools — Architecture, Structure, MEP, QC and Views",
+      price_sub: "Every tool in the catalogue, across every discipline.",
+      price_f1: "The whole catalogue — Architecture, Structure, MEP, QC and Views",
       price_f2: "Revit 2022, 2023, 2024, 2025 and 2026",
       price_f3: "One installer that finds your versions and deploys to each",
       price_f4: "New tools land in your ribbon at no extra cost",
@@ -102,7 +102,7 @@
       contact_direct: "Or skip the form",
 
       // Footer
-      footer_tagline: "Revit automation, written in Lima, Peru — by a civil engineer who got tired of clicking.",
+      footer_tagline: "Revit automation for modelling, quality control and BIM management. Written in Lima, Peru.",
       footer_rights: "All rights reserved.",
       footer_tools: "Tools",
       footer_pricing: "Pricing",
@@ -121,9 +121,9 @@
 
       // Hero
       hero_badge: "Revit 2022 → 2026 · un solo instalador",
-      hero_title: "Me cansé de hacer clic.<br/><span class=\"text-transparent bg-clip-text bg-gradient-to-r from-brand-navy-light to-brand-cyan\">Así que escribí AUBIMAT.</span>",
-      hero_desc: "Diez comandos de Revit que se hacen cargo de lo que a nadie le gusta: trazar cielos rasos sobre muros que ya están dibujados, volver a dibujar un CAD que ya tiene todos los muros, cazar la única tubería que cruza una viga. Cada uno existe porque lo necesité con una entrega encima.",
-      hero_btn_tools: "Ver las diez herramientas",
+      hero_title: "Automatiza tu modelado y <br/><span class=\"text-transparent bg-clip-text bg-gradient-to-r from-brand-navy-light to-brand-cyan\">eleva tu productividad BIM</span>",
+      hero_desc: "Desarrollé AUBIMAT para acelerar los flujos que más tiempo consumen dentro de Revit: modelado, control de calidad y gestión del proyecto. Cada herramienta nació de un problema real en un proyecto real — y si tu oficina necesita algo que no está en el catálogo, también desarrollo herramientas a medida.",
+      hero_btn_tools: "Ver el catálogo",
       hero_btn_get: "Obtener AUBIMAT",
       hero_note: "$4.99 al mes · funciona en Revit 2022 hasta 2026",
 
@@ -132,7 +132,7 @@
       about_title: "Un ingeniero civil que <span class=\"text-gray-400\">siempre terminaba metido en el código</span>",
       about_p1: "Soy Mateo Lopez, ingeniero civil de Lima, Perú. Empecé como coordinador BIM en edificios altos: un complejo residencial de doce torres, un edificio de 22 pisos, más de un millón de pies cuadrados de modelo federado que mantener en orden. Ahí aprendes exactamente qué partes de Revit se te comen la semana.",
       about_p2: "Así que empecé a automatizarlas. Primero Dynamo, unos cincuenta scripts. Después Python y la API de Revit, donde llevo más de veinticinco herramientas corriendo a diario en proyectos reales, recortando entre 40 y 60% del tiempo que costaba cada tarea.",
-      about_p3: "AUBIMAT es lo que pasa cuando esas ideas se reescriben en serio: desde cero en C#, directo contra la API de Revit, lo bastante rápidas para correr sobre un modelo real y estables en cinco versiones de Revit. <span class=\"text-white font-medium\">Aquí no hay nada de demostración.</span> Cada comando salió porque lo necesitaba antes de una entrega.",
+      about_p3: "AUBIMAT es lo que pasa cuando esas ideas se reescriben en serio: desde cero en C#, directo contra la API de Revit, lo bastante rápidas para correr sobre un modelo real y estables en cinco versiones de Revit. Y cuando una oficina necesita algo que el catálogo todavía no cubre, <span class=\"text-white font-medium\">lo desarrollo a medida.</span>",
 
       // Números
       stat1_num: "40 – 60%",
@@ -143,17 +143,17 @@
       stat3_desc: "de modelo de edificios altos coordinados como coordinador BIM. Sé qué se rompe cuando el proyecto crece.",
 
       // Tarjeta del desarrollador
-      dev_badge: "El equipo completo",
-      dev_title: "Le estás comprando a <span class=\"text-gray-400\">una sola persona</span>",
+      dev_badge: "Mi compromiso",
+      dev_title: "Aquí para que tu equipo <span class=\"text-gray-400\">rinda más</span>",
       dev_name: "Mateo Lopez",
       dev_role: "Ingeniero Civil · Especialista en automatización BIM · Lima, Perú",
-      dev_bio: "Yo escribo el código, yo respondo los correos, yo arreglo los errores. No hay niveles de soporte ni cola de tickets: si AUBIMAT hace algo raro en tu modelo, estás hablando con la persona que puede ir a cambiarlo.",
+      dev_bio: "Mi trabajo es que los procesos BIM dejen de consumirte el día. Cada versión de AUBIMAT sale de escuchar dónde se traba realmente la gente, y el compromiso es simple: el catálogo sigue creciendo, las herramientas siguen elevando tu productividad proyecto tras proyecto, y tienes respuesta directa cuando la necesites.",
       dev_connect: "Mateo Lopez en LinkedIn",
 
       // Herramientas
-      tools_badge: "Qué te llevas",
-      tools_title: "Diez comandos, <span class=\"text-brand-cyan\">cinco disciplinas</span>",
-      tools_desc: "Todo viene en un solo instalador. Sin paquetes adicionales ni licencias por herramienta: si está en esta página, está en tu ribbon.",
+      tools_badge: "El catálogo",
+      tools_title: "Herramientas para <span class=\"text-brand-cyan\">cada disciplina</span>",
+      tools_desc: "Arquitectura, estructuras, MEP, control de calidad y vistas. Todo viene en un solo instalador: sin paquetes adicionales ni licencias por herramienta.",
       disc_architecture: "Arquitectura",
       disc_structure: "Estructuras",
       disc_mep: "MEP",
@@ -162,12 +162,12 @@
 
       // Precios
       price_badge: "Precios",
-      price_title: "Un precio. <span class=\"text-brand-cyan\">Sin asteriscos.</span>",
-      price_desc: "Sin licencias por herramienta, sin volver a pagar cuando salga Revit 2027, y con una licencia que tú mismo mueves a otra laptop.",
-      price_plan: "AUBIMAT — todo incluido",
+      price_title: "Todo el catálogo, <span class=\"text-brand-cyan\">un solo precio</span>",
+      price_desc: "Mis mejores herramientas para cada disciplina, al mejor precio. Sin licencias por herramienta y sin volver a pagar cuando salga una nueva versión de Revit.",
+      price_plan: "AUBIMAT — catálogo completo",
       price_period: "/mes",
-      price_sub: "Las diez herramientas. Todas las versiones de Revit compatibles. Todas las actualizaciones.",
-      price_f1: "Las 10 herramientas — Arquitectura, Estructuras, MEP, Control de calidad y Vistas",
+      price_sub: "Todas las herramientas del catálogo, en todas las disciplinas.",
+      price_f1: "Todo el catálogo — Arquitectura, Estructuras, MEP, Control de calidad y Vistas",
       price_f2: "Revit 2022, 2023, 2024, 2025 y 2026",
       price_f3: "Un instalador que detecta tus versiones y se instala en cada una",
       price_f4: "Las herramientas nuevas aparecen en tu ribbon sin costo extra",
@@ -199,7 +199,7 @@
       contact_direct: "O sáltate el formulario",
 
       // Pie
-      footer_tagline: "Automatización de Revit, escrita en Lima, Perú — por un ingeniero civil que se cansó de hacer clic.",
+      footer_tagline: "Automatización de Revit para modelado, control de calidad y gestión BIM. Escrita en Lima, Perú.",
       footer_rights: "Todos los derechos reservados.",
       footer_tools: "Herramientas",
       footer_pricing: "Precios",

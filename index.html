@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AUBIMAT — Revit productivity add-in</title>
-  <meta name="description" content="Ten Revit commands built by a civil engineer who got tired of clicking: ceilings and floors from walls, CAD-to-Revit conversion, clash detection and QA fixes. Revit 2022–2026, $4.99 a month." />
+  <meta name="description" content="AUBIMAT is a Revit add-in that raises your BIM productivity — modelling, quality control and project management workflows automated across Revit 2022–2026. Custom tools built on request." />
   <meta name="keywords" content="revit plugin, revit add-in, bim automation, cad to revit, clash detection, revit api, plugins revit, automatización bim" />
   <link rel="icon" type="image/png" href="assets/logo.png" />
 
@@ -104,18 +104,18 @@
         </div>
 
         <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-8" data-i18n="hero_title">
-          I got tired of clicking.<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-navy-light to-brand-cyan">So I wrote AUBIMAT.</span>
+          Automate your modelling and <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-navy-light to-brand-cyan">raise your BIM productivity</span>
         </h1>
 
         <p class="text-lg sm:text-xl lg:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed" data-i18n="hero_desc">
-          Ten Revit commands that take over the parts nobody enjoys — tracing ceilings on top of
-          walls that are already drawn, redrawing a CAD plan that already has every wall in it,
-          hunting the one pipe that crosses a beam.
+          I built AUBIMAT to speed up the workflows that eat the most time inside Revit: modelling,
+          quality control and project management. And if your office needs something that isn't in
+          the catalogue, I build custom tools too.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
           <button onclick="showSection('tools')" class="w-full sm:w-auto bg-white text-black hover:bg-gray-100 px-8 py-4 rounded-full font-bold text-lg transition-all shadow-[0_0_20px_rgba(43,184,196,0.25)] hover:shadow-[0_0_30px_rgba(43,184,196,0.45)] transform hover:-translate-y-1" data-i18n="hero_btn_tools">
-            See the ten tools
+            Explore the catalogue
           </button>
           <a href="#" data-checkout class="w-full sm:w-auto text-center border border-white/30 hover:bg-white/10 text-white px-8 py-4 rounded-full font-bold text-lg transition-all backdrop-blur-sm" data-i18n="hero_btn_get">
             Get AUBIMAT
@@ -139,7 +139,7 @@
             <div class="space-y-5 text-gray-400 text-lg leading-relaxed">
               <p data-i18n="about_p1">I'm Mateo Lopez, a civil engineer from Lima, Peru.</p>
               <p data-i18n="about_p2">So I started automating the parts of Revit that eat your week.</p>
-              <p data-i18n="about_p3">AUBIMAT is what happens when those ideas get rewritten properly.</p>
+              <p data-i18n="about_p3">AUBIMAT is what happens when those ideas get rewritten properly — and when an office needs something the catalogue doesn't cover yet, I build it to measure.</p>
             </div>
           </div>
 
@@ -164,9 +164,9 @@
 
         <!-- Developer card -->
         <div class="mt-24 text-center border-t border-white/5 pt-20">
-          <div class="mb-4 inline-block text-brand-cyan font-semibold tracking-wider text-sm uppercase" data-i18n="dev_badge">The whole team</div>
+          <div class="mb-4 inline-block text-brand-cyan font-semibold tracking-wider text-sm uppercase" data-i18n="dev_badge">My commitment</div>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight" data-i18n="dev_title">
-            You're buying from <span class="text-gray-400">one person</span>
+            Here to make your team <span class="text-gray-400">faster</span>
           </h2>
 
           <img src="assets/profile.png" alt="Mateo Lopez"
@@ -175,9 +175,10 @@
           <h3 class="text-3xl font-bold text-white mb-2" data-i18n="dev_name">Mateo Lopez</h3>
           <p class="text-brand-cyan font-medium mb-5" data-i18n="dev_role">Civil Engineer · BIM Automation Specialist · Lima, Peru</p>
           <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed" data-i18n="dev_bio">
-            I write the code, I answer the emails, I fix the bugs. There is no support tier and no
-            ticket queue — if AUBIMAT does something strange on your model, you are talking to the
-            person who can go and change it.
+            My work is making BIM processes stop eating your day. Every AUBIMAT release comes out of
+            listening to where people actually get stuck, and the commitment is simple: the
+            catalogue keeps growing, the tools keep raising your productivity project after project,
+            and you get a direct answer whenever you need one.
           </p>
 
           <a data-linkedin target="_blank" rel="noopener noreferrer"
@@ -195,13 +196,13 @@
     <section id="tools" class="page-section bg-grid-pattern" hidden>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
         <div class="text-center mb-16">
-          <div class="mb-4 inline-block text-brand-cyan font-semibold tracking-wider text-sm uppercase" data-i18n="tools_badge">What you get</div>
+          <div class="mb-4 inline-block text-brand-cyan font-semibold tracking-wider text-sm uppercase" data-i18n="tools_badge">The catalogue</div>
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight" data-i18n="tools_title">
-            Ten commands, <span class="text-brand-cyan">five disciplines</span>
+            Tools for <span class="text-brand-cyan">every discipline</span>
           </h2>
           <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-gray-400" data-i18n="tools_desc">
-            All of it ships in one installer. No add-on packs, no per-tool licences — if it is on
-            this page, it is in your ribbon.
+            Architecture, structure, MEP, quality control and views. All of it ships in one
+            installer — no add-on packs, no per-tool licences.
           </p>
         </div>
 
@@ -216,11 +217,11 @@
         <div class="text-center mb-16">
           <div class="mb-4 inline-block text-brand-cyan font-semibold tracking-wider text-sm uppercase" data-i18n="price_badge">Pricing</div>
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight" data-i18n="price_title">
-            One price. <span class="text-brand-cyan">No asterisks.</span>
+            The whole catalogue, <span class="text-brand-cyan">one price</span>
           </h2>
           <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-gray-400" data-i18n="price_desc">
-            No per-tool licences, no upgrade fee when Revit 2027 turns up, and a seat you can move
-            to a new laptop yourself.
+            My best tools for every discipline, at the best price. No per-tool licences and nothing
+            more to pay when a new Revit version lands.
           </p>
         </div>
 
@@ -228,18 +229,18 @@
 
           <!-- Price card -->
           <div class="rounded-3xl p-8 sm:p-10 bg-white/[0.03] border border-white/10 shadow-2xl shadow-black/50">
-            <p class="text-sm font-semibold tracking-wider uppercase text-gray-500 mb-4" data-i18n="price_plan">AUBIMAT — everything included</p>
+            <p class="text-sm font-semibold tracking-wider uppercase text-gray-500 mb-4" data-i18n="price_plan">AUBIMAT — full catalogue</p>
             <div class="flex items-baseline mb-2">
               <span class="text-2xl font-bold text-gray-400 self-start mt-2">$</span>
               <span class="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-navy-light to-brand-cyan">4.99</span>
               <span class="text-lg font-semibold text-gray-500 ml-1" data-i18n="price_period">/month</span>
             </div>
-            <p class="text-gray-400 mb-8" data-i18n="price_sub">All ten tools. Every supported Revit version. Every update.</p>
+            <p class="text-gray-400 mb-8" data-i18n="price_sub">Every tool in the catalogue, across every discipline.</p>
 
             <ul class="space-y-3 mb-8">
               <li class="flex items-start gap-3 text-gray-300">
                 <svg class="w-5 h-5 shrink-0 mt-0.5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span data-i18n="price_f1">All 10 tools — Architecture, Structure, MEP, QC and Views</span>
+                <span data-i18n="price_f1">The whole catalogue — Architecture, Structure, MEP, QC and Views</span>
               </li>
               <li class="flex items-start gap-3 text-gray-300">
                 <svg class="w-5 h-5 shrink-0 mt-0.5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -355,7 +356,8 @@
             <span class="font-extrabold text-xl text-white tracking-tight">AUBIMAT</span>
           </div>
           <p class="text-sm text-gray-500 max-w-sm" data-i18n="footer_tagline">
-            Revit automation, written in Lima, Peru — by a civil engineer who got tired of clicking.
+            Revit automation for modelling, quality control and BIM management.
+            Written in Lima, Peru.
           </p>
         </div>
 
