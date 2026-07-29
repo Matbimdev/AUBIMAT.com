@@ -1,141 +1,378 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AUBIMAT — Revit productivity add-in</title>
-  <meta name="description" content="AUBIMAT is a Revit add-in that automates architectural, structural and MEP BIM tasks. Ceilings, floors, finish walls, CAD-to-Revit, clash detection and more." />
+  <meta name="description" content="Ten Revit commands built by a civil engineer who got tired of clicking: ceilings and floors from walls, CAD-to-Revit conversion, clash detection and QA fixes. Revit 2022–2026, $4.99 a month." />
+  <meta name="keywords" content="revit plugin, revit add-in, bim automation, cad to revit, clash detection, revit api, plugins revit, automatización bim" />
   <link rel="icon" type="image/png" href="assets/logo.png" />
+
+  <!-- Tailwind CSS (Play CDN — no build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // Taken from the AUBIMAT logo gradient
+            'brand-navy': '#1e3a5f',
+            'brand-navy-light': '#4b83c4',
+            'brand-cyan': '#2bb8c4'
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
+
+<body class="flex flex-col min-h-screen font-sans bg-[#0a0a0a] text-gray-200 selection:bg-brand-cyan selection:text-black">
+
   <!-- ===================== Header ===================== -->
-  <header class="site-header">
-    <a class="brand" href="#top">
-      <img src="assets/logo.png" alt="AUBIMAT" class="brand-logo" />
-    </a>
-    <nav class="site-nav">
-      <a href="#tools">Tools</a>
-      <a href="#pricing">Pricing</a>
-      <a href="mailto:soporte@aubimat.com?subject=AUBIMAT" class="btn btn-primary btn-sm">Get AUBIMAT</a>
-    </nav>
+  <header class="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+
+        <!-- Brand. The logo PNG has a baked-in white background (no alpha),
+             so it lives inside a white rounded tile instead of floating on
+             the dark page. -->
+        <button onclick="showSection('home')" class="flex items-center group">
+          <span class="brand-mark w-10 h-10 rounded-lg mr-3 shadow-md group-hover:scale-105 transition-transform" role="img" aria-label="AUBIMAT"></span>
+          <span class="font-extrabold text-2xl text-white tracking-tight">AUBIMAT</span>
+        </button>
+
+        <!-- Desktop nav -->
+        <nav class="hidden lg:flex items-center space-x-6">
+          <button onclick="showSection('home')" data-nav="home" class="text-gray-400 hover:text-white font-semibold transition-colors" data-i18n="nav_home">Home</button>
+          <button onclick="showSection('about')" data-nav="about" class="text-gray-400 hover:text-white font-semibold transition-colors" data-i18n="nav_about">About</button>
+          <button onclick="showSection('tools')" data-nav="tools" class="text-gray-400 hover:text-white font-semibold transition-colors" data-i18n="nav_tools">Tools</button>
+          <button onclick="showSection('pricing')" data-nav="pricing" class="text-gray-400 hover:text-white font-semibold transition-colors" data-i18n="nav_pricing">Pricing</button>
+          <button onclick="showSection('contact')" data-nav="contact" class="text-gray-400 hover:text-white font-semibold transition-colors" data-i18n="nav_contact">Contact</button>
+          <a href="#" data-checkout class="bg-white hover:bg-gray-200 text-black px-5 py-2.5 rounded-full font-semibold text-sm transition-all shadow-md hover:shadow-lg" data-i18n="nav_cta">Get AUBIMAT</a>
+
+          <div class="flex items-center space-x-3 border-l border-gray-700 pl-4 font-bold text-sm">
+            <button onclick="setLanguage('en')" id="btn-en" title="English" class="hover:text-brand-cyan transition-colors focus:outline-none">EN</button>
+            <button onclick="setLanguage('es')" id="btn-es" title="Español" class="hover:text-brand-cyan transition-colors focus:outline-none opacity-50">ES</button>
+          </div>
+        </nav>
+
+        <!-- Mobile toggle -->
+        <button onclick="toggleMobileMenu()" class="lg:hidden text-gray-300 hover:text-white p-2 -mr-2" aria-label="Menu">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-white/5 bg-black/95 backdrop-blur-md">
+      <div class="px-4 py-4 space-y-1">
+        <button onclick="showSection('home')" class="w-full text-left text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-semibold transition-colors" data-i18n="nav_home">Home</button>
+        <button onclick="showSection('about')" class="w-full text-left text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-semibold transition-colors" data-i18n="nav_about">About</button>
+        <button onclick="showSection('tools')" class="w-full text-left text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-semibold transition-colors" data-i18n="nav_tools">Tools</button>
+        <button onclick="showSection('pricing')" class="w-full text-left text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-semibold transition-colors" data-i18n="nav_pricing">Pricing</button>
+        <button onclick="showSection('contact')" class="w-full text-left text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-semibold transition-colors" data-i18n="nav_contact">Contact</button>
+        <a href="#" data-checkout class="block text-center bg-white hover:bg-gray-200 text-black px-3 py-2 mt-3 rounded-md text-lg font-semibold transition-all" data-i18n="nav_cta">Get AUBIMAT</a>
+
+        <div class="flex items-center justify-center space-x-4 pt-4 font-bold">
+          <button onclick="setLanguage('en')" id="btn-en-mob" class="hover:text-brand-cyan transition-colors">EN</button>
+          <span class="text-gray-700">|</span>
+          <button onclick="setLanguage('es')" id="btn-es-mob" class="hover:text-brand-cyan transition-colors opacity-50">ES</button>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <main id="top">
-    <!-- ===================== Hero ===================== -->
-    <section class="hero">
-      <div class="hero-content">
-        <span class="badge">Autodesk Revit 2022–2026</span>
-        <h1>Automate the tedious parts of your BIM workflow.</h1>
-        <p class="hero-sub">
-          AUBIMAT adds a toolkit of one-click commands to Revit — ceilings and floors from
-          walls, CAD-to-Revit conversion, clash detection, QA fixes and more. Built by a BIM
-          specialist, for BIM specialists.
-        </p>
-        <div class="hero-cta">
-          <a href="mailto:soporte@aubimat.com?subject=AUBIMAT" class="btn btn-primary">Start your free trial</a>
-          <a href="#tools" class="btn btn-ghost">See the tools</a>
+  <main class="flex-grow">
+
+    <!-- ===================== Home ===================== -->
+    <section id="home" class="page-section relative overflow-hidden">
+      <canvas id="constellation" class="absolute inset-0 w-full h-full"></canvas>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a0a0a]"></div>
+
+      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span>
+          <span class="text-sm font-medium text-gray-200" data-i18n="hero_badge">Revit 2022 → 2026 · one installer</span>
         </div>
-        <p class="hero-note">14 days free, then $4.99/month · Works on Revit 2022 through 2026</p>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-8" data-i18n="hero_title">
+          I got tired of clicking.<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-navy-light to-brand-cyan">So I wrote AUBIMAT.</span>
+        </h1>
+
+        <p class="text-lg sm:text-xl lg:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed" data-i18n="hero_desc">
+          Ten Revit commands that take over the parts nobody enjoys — tracing ceilings on top of
+          walls that are already drawn, redrawing a CAD plan that already has every wall in it,
+          hunting the one pipe that crosses a beam.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          <button onclick="showSection('tools')" class="w-full sm:w-auto bg-white text-black hover:bg-gray-100 px-8 py-4 rounded-full font-bold text-lg transition-all shadow-[0_0_20px_rgba(43,184,196,0.25)] hover:shadow-[0_0_30px_rgba(43,184,196,0.45)] transform hover:-translate-y-1" data-i18n="hero_btn_tools">
+            See the ten tools
+          </button>
+          <a href="#" data-checkout class="w-full sm:w-auto text-center border border-white/30 hover:bg-white/10 text-white px-8 py-4 rounded-full font-bold text-lg transition-all backdrop-blur-sm" data-i18n="hero_btn_get">
+            Get AUBIMAT
+          </a>
+        </div>
+
+        <p class="text-sm text-gray-500" data-i18n="hero_note">$4.99 a month · works on Revit 2022 through 2026</p>
       </div>
-      <div class="hero-art">
-        <img src="assets/logo.png" alt="" />
+    </section>
+
+    <!-- ===================== About ===================== -->
+    <section id="about" class="page-section" hidden>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
+
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <div class="mb-4 inline-block text-brand-cyan font-semibold tracking-wider text-sm uppercase" data-i18n="about_badge">Who's behind this</div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6 leading-tight" data-i18n="about_title">
+              A civil engineer who <span class="text-gray-400">kept ending up in the code</span>
+            </h2>
+            <div class="space-y-5 text-gray-400 text-lg leading-relaxed">
+              <p data-i18n="about_p1">I'm Mateo Lopez, a civil engineer from Lima, Peru.</p>
+              <p data-i18n="about_p2">So I started automating the parts of Revit that eat your week.</p>
+              <p data-i18n="about_p3">AUBIMAT is what happens when those ideas get rewritten properly.</p>
+            </div>
+          </div>
+
+          <!-- Numbers from real project work, not marketing adjectives. -->
+          <div class="space-y-5">
+            <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/5">
+              <div class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-navy-light to-brand-cyan mb-1" data-i18n="stat1_num">40 – 60%</div>
+              <p class="text-gray-400" data-i18n="stat1_desc">less time on the tasks these tools cover, measured on live production projects.</p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/5">
+              <div class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-navy-light to-brand-cyan mb-1" data-i18n="stat2_num">75+</div>
+              <p class="text-gray-400" data-i18n="stat2_desc">automation tools and scripts shipped before AUBIMAT existed — this is what I do all day.</p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white/[0.03] border border-white/5">
+              <div class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-navy-light to-brand-cyan mb-1" data-i18n="stat3_num">1.3M ft²</div>
+              <p class="text-gray-400" data-i18n="stat3_desc">of high-rise model coordinated as a BIM coordinator. I know what breaks at scale.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Developer card -->
+        <div class="mt-24 text-center border-t border-white/5 pt-20">
+          <div class="mb-4 inline-block text-brand-cyan font-semibold tracking-wider text-sm uppercase" data-i18n="dev_badge">The whole team</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight" data-i18n="dev_title">
+            You're buying from <span class="text-gray-400">one person</span>
+          </h2>
+
+          <img src="assets/profile.png" alt="Mateo Lopez"
+               class="w-44 h-44 sm:w-48 sm:h-48 rounded-full object-cover mx-auto mt-12 mb-6 ring-2 ring-white/10 shadow-2xl shadow-black/60" />
+
+          <h3 class="text-3xl font-bold text-white mb-2" data-i18n="dev_name">Mateo Lopez</h3>
+          <p class="text-brand-cyan font-medium mb-5" data-i18n="dev_role">Civil Engineer · BIM Automation Specialist · Lima, Peru</p>
+          <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed" data-i18n="dev_bio">
+            I write the code, I answer the emails, I fix the bugs. There is no support tier and no
+            ticket queue — if AUBIMAT does something strange on your model, you are talking to the
+            person who can go and change it.
+          </p>
+
+          <a data-linkedin target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2.5 mt-8 px-6 py-3 rounded-full border border-white/15 text-gray-300 hover:text-white hover:border-[#0A66C2] hover:bg-[#0A66C2]/10 transition-all duration-300">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+            <span class="font-semibold text-sm" data-i18n="dev_connect">Mateo Lopez on LinkedIn</span>
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- ===================== Tools ===================== -->
-    <section id="tools" class="section">
-      <div class="section-head">
-        <h2>What's inside</h2>
-        <p>Ten production-ready commands, grouped by discipline.</p>
+    <section id="tools" class="page-section bg-grid-pattern" hidden>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
+        <div class="text-center mb-16">
+          <div class="mb-4 inline-block text-brand-cyan font-semibold tracking-wider text-sm uppercase" data-i18n="tools_badge">What you get</div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight" data-i18n="tools_title">
+            Ten commands, <span class="text-brand-cyan">five disciplines</span>
+          </h2>
+          <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-gray-400" data-i18n="tools_desc">
+            All of it ships in one installer. No add-on packs, no per-tool licences — if it is on
+            this page, it is in your ribbon.
+          </p>
+        </div>
+
+        <!-- Cards injected by js/app.js -->
+        <div id="tools-container"></div>
       </div>
-      <div class="tools-grid" id="tools-grid"><!-- cards injected by app.js --></div>
     </section>
 
     <!-- ===================== Pricing ===================== -->
-    <section id="pricing" class="section pricing">
-      <div class="price-card">
-        <h2>Simple pricing</h2>
-        <div class="price"><span class="currency">$</span>4.99<span class="period">/month</span></div>
-        <p class="price-sub">Full access to every AUBIMAT tool.</p>
-        <ul class="price-list">
-          <li>All 10 tools, all disciplines</li>
-          <li>Revit 2022 – 2026</li>
-          <li>One installer, automatic version detection</li>
-          <li>New tools included as they ship</li>
-          <li>One computer per license, movable anytime</li>
-        </ul>
-        <a href="mailto:soporte@aubimat.com?subject=AUBIMAT" class="btn btn-primary btn-block">Start your free trial</a>
-        <p class="price-fineprint">14 days free. Cancel anytime — no payment integration on this page yet.</p>
+    <section id="pricing" class="page-section" hidden>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
+        <div class="text-center mb-16">
+          <div class="mb-4 inline-block text-brand-cyan font-semibold tracking-wider text-sm uppercase" data-i18n="price_badge">Pricing</div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight" data-i18n="price_title">
+            One price. <span class="text-brand-cyan">No asterisks.</span>
+          </h2>
+          <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-gray-400" data-i18n="price_desc">
+            No per-tool licences, no upgrade fee when Revit 2027 turns up, and a seat you can move
+            to a new laptop yourself.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+
+          <!-- Price card -->
+          <div class="rounded-3xl p-8 sm:p-10 bg-white/[0.03] border border-white/10 shadow-2xl shadow-black/50">
+            <p class="text-sm font-semibold tracking-wider uppercase text-gray-500 mb-4" data-i18n="price_plan">AUBIMAT — everything included</p>
+            <div class="flex items-baseline mb-2">
+              <span class="text-2xl font-bold text-gray-400 self-start mt-2">$</span>
+              <span class="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-navy-light to-brand-cyan">4.99</span>
+              <span class="text-lg font-semibold text-gray-500 ml-1" data-i18n="price_period">/month</span>
+            </div>
+            <p class="text-gray-400 mb-8" data-i18n="price_sub">All ten tools. Every supported Revit version. Every update.</p>
+
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3 text-gray-300">
+                <svg class="w-5 h-5 shrink-0 mt-0.5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="price_f1">All 10 tools — Architecture, Structure, MEP, QC and Views</span>
+              </li>
+              <li class="flex items-start gap-3 text-gray-300">
+                <svg class="w-5 h-5 shrink-0 mt-0.5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="price_f2">Revit 2022, 2023, 2024, 2025 and 2026</span>
+              </li>
+              <li class="flex items-start gap-3 text-gray-300">
+                <svg class="w-5 h-5 shrink-0 mt-0.5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="price_f3">One installer that finds your versions and deploys to each</span>
+              </li>
+              <li class="flex items-start gap-3 text-gray-300">
+                <svg class="w-5 h-5 shrink-0 mt-0.5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="price_f4">New tools included as they ship</span>
+              </li>
+              <li class="flex items-start gap-3 text-gray-300">
+                <svg class="w-5 h-5 shrink-0 mt-0.5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="price_f5">One machine at a time — move the licence whenever you change laptop</span>
+              </li>
+            </ul>
+
+            <a href="#" data-checkout class="block text-center bg-white hover:bg-gray-100 text-black px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:-translate-y-1 shadow-lg" data-i18n="price_cta">
+              Get AUBIMAT
+            </a>
+            <p class="mt-4 text-center text-xs text-gray-500" data-i18n="price_fineprint">
+              Cancel any month from your own account. Licence keys are issued and validated by
+              Lemon Squeezy.
+            </p>
+          </div>
+
+          <!-- Lemon Squeezy trust block -->
+          <div class="rounded-3xl p-8 sm:p-10 bg-white/[0.02] border border-white/5">
+            <div class="w-12 h-12 rounded-xl bg-[#FFC233] flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4" data-i18n="lemon_title">I never see your card</h3>
+            <p class="text-gray-400 leading-relaxed mb-8" data-i18n="lemon_desc">
+              Checkout, invoices and licence keys all go through Lemon Squeezy, a Merchant of
+              Record. They take the payment and deal with the tax; AUBIMAT only ever receives a
+              licence key to validate.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3 text-gray-400 text-sm">
+                <svg class="w-5 h-5 shrink-0 mt-0.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="lemon_b1">PCI-DSS compliant checkout — not mine to get wrong</span>
+              </li>
+              <li class="flex items-start gap-3 text-gray-400 text-sm">
+                <svg class="w-5 h-5 shrink-0 mt-0.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="lemon_b2">Card, PayPal and local payment methods</span>
+              </li>
+              <li class="flex items-start gap-3 text-gray-400 text-sm">
+                <svg class="w-5 h-5 shrink-0 mt-0.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span data-i18n="lemon_b3">Invoices and VAT handled for you</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ===================== Account (Register / Login) =====================
-         Hidden while the licensing flow is being decided. The markup and the
-         handlers in app.js are kept intact — removing this `hidden` attribute
-         brings the whole section back. -->
-    <section id="account" class="section account" hidden>
-      <div class="auth-card">
-        <div class="auth-tabs">
-          <button class="auth-tab is-active" data-tab="register">Create account</button>
-          <button class="auth-tab" data-tab="login">Sign in</button>
+    <!-- ===================== Contact ===================== -->
+    <section id="contact" class="page-section" hidden>
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
+        <div class="text-center mb-12">
+          <div class="mb-4 inline-block text-brand-cyan font-semibold tracking-wider text-sm uppercase" data-i18n="contact_badge">Contact</div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight" data-i18n="contact_title">
+            Write to <span class="text-brand-cyan">me</span>
+          </h2>
+          <p class="mt-4 text-lg text-gray-400" data-i18n="contact_desc">
+            A bug, a licence that will not activate, or a tool you wish existed for your office.
+            It goes straight to my inbox and I read all of it.
+          </p>
         </div>
 
-        <!-- Register -->
-        <form id="register-form" class="auth-form">
-          <div class="row-2">
-            <label>First name<input name="first_name" type="text" autocomplete="given-name" required /></label>
-            <label>Last name<input name="last_name" type="text" autocomplete="family-name" required /></label>
+        <form id="contact-form" class="space-y-5 rounded-3xl p-8 bg-white/[0.02] border border-white/5">
+          <div class="grid sm:grid-cols-2 gap-5">
+            <input type="text" name="name" id="name" class="field" required autocomplete="name" data-i18n="form_name" placeholder="Your name" />
+            <input type="email" name="email" id="email" class="field" required autocomplete="email" data-i18n="form_email" placeholder="Your email" />
           </div>
-          <label>Company<input name="company" type="text" autocomplete="organization" /></label>
-          <label>Email<input name="email" type="email" autocomplete="email" required /></label>
-          <div class="row-2">
-            <label>Password<input name="password" type="password" autocomplete="new-password" minlength="8" required /></label>
-            <label>Confirm password<input name="password2" type="password" autocomplete="new-password" minlength="8" required /></label>
+
+          <select name="subject" id="subject" class="field">
+            <option value="general" data-i18n="subj_general">Just a question</option>
+            <option value="custom" data-i18n="subj_custom">A custom tool for my office</option>
+            <option value="licence" data-i18n="subj_licence">Licence or billing</option>
+            <option value="bug" data-i18n="subj_bug">Something is broken</option>
+          </select>
+
+          <textarea name="message" id="message" rows="5" class="field" required data-i18n="form_message" placeholder="What are you stuck on?"></textarea>
+
+          <div class="flex flex-col sm:flex-row sm:items-center gap-4 pt-2">
+            <button type="submit" class="bg-white hover:bg-gray-100 text-black px-8 py-3.5 rounded-full font-bold transition-all transform hover:-translate-y-0.5 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none" data-i18n="form_send">
+              Send it
+            </button>
+            <p id="form-status" class="text-sm text-gray-500 min-h-[1.5rem]" role="status"></p>
           </div>
-          <label class="check">
-            <input name="consent" type="checkbox" required />
-            <span>I accept the <a href="#" target="_blank" rel="noopener">Terms &amp; Privacy</a> (Ley N° 29733).</span>
-          </label>
-          <button type="submit" class="btn btn-primary btn-block">Create account</button>
-          <p class="auth-msg" id="register-msg" role="status"></p>
         </form>
 
-        <!-- Login -->
-        <form id="login-form" class="auth-form is-hidden">
-          <label>Email<input name="email" type="email" autocomplete="email" required /></label>
-          <label>Password<input name="password" type="password" autocomplete="current-password" required /></label>
-          <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-          <p class="auth-msg" id="login-msg" role="status"></p>
-        </form>
-
-        <!-- Signed-in panel -->
-        <div id="account-panel" class="account-panel is-hidden">
-          <h3>You're signed in</h3>
-          <dl class="account-info">
-            <div><dt>Email</dt><dd id="ap-email">—</dd></div>
-            <div><dt>License</dt><dd id="ap-status">—</dd></div>
-          </dl>
-          <button id="signout-btn" class="btn btn-ghost btn-block">Sign out</button>
-        </div>
+        <p class="mt-8 text-center text-gray-500">
+          <span data-i18n="contact_direct">Or skip the form</span> —
+          <a href="mailto:soporte@aubimat.com" class="text-brand-cyan hover:underline">soporte@aubimat.com</a>
+        </p>
       </div>
     </section>
   </main>
 
   <!-- ===================== Footer ===================== -->
-  <footer class="site-footer">
-    <img src="assets/logo.png" alt="AUBIMAT" class="footer-logo" />
-    <p>© <span id="year"></span> Mateo Lopez — AUBIMAT. All rights reserved.</p>
-    <nav>
-      <a href="#tools">Tools</a>
-      <a href="#pricing">Pricing</a>
-      <a href="mailto:soporte@aubimat.com">Contact</a>
-    </nav>
+  <footer class="border-t border-white/5 bg-black/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+        <div>
+          <div class="flex items-center mb-3">
+            <span class="brand-mark w-9 h-9 rounded-lg mr-3" role="img" aria-label="AUBIMAT"></span>
+            <span class="font-extrabold text-xl text-white tracking-tight">AUBIMAT</span>
+          </div>
+          <p class="text-sm text-gray-500 max-w-sm" data-i18n="footer_tagline">
+            Revit automation, written in Lima, Peru — by a civil engineer who got tired of clicking.
+          </p>
+        </div>
+
+        <nav class="flex flex-wrap gap-x-8 gap-y-3 text-sm">
+          <button onclick="showSection('tools')" class="text-gray-400 hover:text-white transition-colors" data-i18n="footer_tools">Tools</button>
+          <button onclick="showSection('pricing')" class="text-gray-400 hover:text-white transition-colors" data-i18n="footer_pricing">Pricing</button>
+          <button onclick="showSection('contact')" class="text-gray-400 hover:text-white transition-colors" data-i18n="footer_contact">Contact</button>
+        </nav>
+      </div>
+
+      <p class="mt-10 pt-8 border-t border-white/5 text-xs text-gray-600">
+        © <span id="year"></span> Mateo Lopez — AUBIMAT. <span data-i18n="footer_rights">All rights reserved.</span>
+      </p>
+    </div>
   </footer>
 
-  <!-- Supabase JS + app -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
