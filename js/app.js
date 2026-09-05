@@ -58,7 +58,7 @@
       disc: "architecture", icon: "wallFromCAD_wallFromCAD",
       name: { en: "Wall CAD", es: "Muros desde CAD" },
       desc: {
-        en: "Generates walls from CAD footprints — runs, L-corners, T-junctions and crossings.",
+        en: "Generates walls from CAD footprints: runs, L-corners, T-junctions and crossings.",
         es: "Genera muros a partir de las siluetas del CAD: tramos rectos, esquinas en L, encuentros en T y cruces."
       }
     },
@@ -359,7 +359,7 @@
         // one from the selected topic instead of letting the raw slug through.
         const topic = form.querySelector("#topic");
         const label = topic.options[topic.selectedIndex].textContent.trim();
-        body.append("subject", "AUBIMAT — " + label);
+        body.append("subject", "AUBIMAT: " + label);
         body.append("from_name", form.querySelector("#name").value.trim() || "aubimat.com");
         const res = await fetch("https://api.web3forms.com/submit", { method: "POST", body });
         const data = await res.json();

@@ -25,7 +25,7 @@
       // Hero
       hero_badge: "AUBIMAT now available",
       hero_title: "Automate your modelling and <br/><span class=\"text-transparent bg-clip-text bg-gradient-to-r from-brand-navy-light to-brand-cyan\">raise your BIM productivity</span>",
-      hero_desc: "I built AUBIMAT to speed up the workflows that eat the most time inside Revit: modelling, quality control and project management. Every tool came out of a real problem on a real project — and if your office needs something that isn't in the catalogue, I build custom tools too.",
+      hero_desc: "I built AUBIMAT to speed up the workflows that eat the most time inside Revit: modelling, quality control and project management. Every tool came out of a real problem on a real project, and if your office needs something that isn't in the catalogue, I build custom tools too.",
       hero_btn_tools: "Explore the catalogue",
       hero_btn_get: "Start the 7-day trial",
       hero_note: "$9.99 a month · 7 days free · works on Revit 2022 through 2026",
@@ -33,7 +33,7 @@
       // About
       about_badge: "Who's behind this",
       about_title: "A civil engineer who <span class=\"text-gray-400\">kept ending up in the code</span>",
-      about_p1: "I'm Mateo Lopez, a civil engineer from Lima, Peru. I started out as a BIM coordinator on high-rises — a twelve-tower residential complex, a 22-storey building, over a million square feet of federated model to keep honest. That is where you learn exactly which parts of Revit eat your week.",
+      about_p1: "I'm Mateo Lopez, a civil engineer from Lima, Peru. I started out as a BIM coordinator on high-rises: a twelve-tower residential complex, a 22-storey building, over a million square feet of federated model to keep honest. That is where you learn exactly which parts of Revit eat your week.",
       about_p2: "So I started automating them. Dynamo first, fifty-odd scripts. Then Python and the Revit API, where I've shipped more than twenty-five tools that run daily on live projects and take 40 to 60% off the time each task used to cost.",
       about_p3: "AUBIMAT is what happens when those ideas get rewritten properly: from scratch in C#, straight against the Revit API, fast enough to run on a real model and stable across five Revit versions. And when an office needs something the catalogue doesn't cover yet, <span class=\"text-white font-medium\">I build it to measure.</span>",
 
@@ -41,7 +41,7 @@
       stat1_num: "40 – 60%",
       stat1_desc: "less time on the tasks these tools cover, measured on live production projects.",
       stat2_num: "75+",
-      stat2_desc: "automation tools and scripts shipped before AUBIMAT existed — this is what I do all day.",
+      stat2_desc: "automation tools and scripts shipped before AUBIMAT existed: this is what I do all day.",
       stat3_num: "1.3M ft²",
       stat3_desc: "of high-rise model coordinated as a BIM coordinator. I know what breaks once a project gets big.",
 
@@ -56,7 +56,7 @@
       // Tools
       tools_badge: "The catalogue",
       tools_title: "Tools for <span class=\"text-brand-cyan\">every discipline</span>",
-      tools_desc: "Architecture, structure, MEP, quality control and views. All of it ships in one installer — no add-on packs, no per-tool licences.",
+      tools_desc: "Architecture, structure, MEP, quality control and views. All of it ships in one installer: no add-on packs, no per-tool licences.",
       disc_architecture: "Architecture",
       disc_structure: "Structure",
       disc_mep: "MEP",
@@ -86,16 +86,16 @@
       plan_annual_save: "Two months free",
 
       price_included: "Included on every plan",
-      price_f1: "The whole catalogue — Architecture, Structure, MEP, QC and Views",
+      price_f1: "The whole catalogue: Architecture, Structure, MEP, QC and Views",
       price_f2: "Revit 2022, 2023, 2024, 2025 and 2026",
       price_f3: "One installer that finds your versions and deploys to each",
       price_f4: "New tools land in your ribbon at no extra cost",
-      price_f5: "One machine at a time — move the licence whenever you change laptop",
+      price_f5: "One machine at a time: move the licence whenever you change laptop",
       price_cta: "Start the 7-day trial",
       price_fineprint: "The 7-day trial is free. A card is needed to start it and nothing is charged if you cancel before day seven. Licence keys are issued and validated by Lemon Squeezy.",
       lemon_title: "I never see your card",
       lemon_desc: "Checkout, invoices and licence keys all go through <strong class=\"text-white\">Lemon Squeezy</strong>, a Merchant of Record. They take the payment and deal with the tax; AUBIMAT only ever receives a licence key to validate.",
-      lemon_b1: "PCI-DSS compliant checkout — not mine to get wrong",
+      lemon_b1: "PCI-DSS compliant checkout, not mine to get wrong",
       lemon_b2: "Card, PayPal and local payment methods",
       lemon_b3: "Invoices and VAT handled for you",
 
@@ -108,14 +108,14 @@
       subj_general: "Questions about AUBIMAT",
       subj_custom: "Custom add-in or automation development",
       subj_enterprise: "Licensing for a company",
-      subj_collab: "Collaboration — interview, talk or partnership",
+      subj_collab: "Collaboration: interview, talk or partnership",
       subj_other: "Something else",
       form_message: "Tell me what you want to automate",
       form_send: "Send it",
       form_sending: "Sending…",
       form_ok: "✓ Got it. I'll reply shortly.",
       form_err: "That didn't go through. Email support@aubimat.com directly and I'll pick it up there.",
-      form_pending: "The form isn't wired up yet — email support@aubimat.com in the meantime.",
+      form_pending: "The form isn't wired up yet: email support@aubimat.com in the meantime.",
       contact_direct: "Or skip the form",
 
       // Closing CTA
@@ -145,7 +145,7 @@
       // Hero
       hero_badge: "AUBIMAT ya disponible",
       hero_title: "Automatiza tu modelado y <br/><span class=\"text-transparent bg-clip-text bg-gradient-to-r from-brand-navy-light to-brand-cyan\">eleva tu productividad BIM</span>",
-      hero_desc: "Desarrollé AUBIMAT para acelerar los flujos que más tiempo consumen dentro de Revit: modelado, control de calidad y gestión del proyecto. Cada herramienta nació de un problema real en un proyecto real — y si tu oficina necesita algo que no está en el catálogo, también desarrollo herramientas a medida.",
+      hero_desc: "Desarrollé AUBIMAT para acelerar los flujos que más tiempo consumen dentro de Revit: modelado, control de calidad y gestión del proyecto. Cada herramienta nació de un problema real en un proyecto real, y si tu oficina necesita algo que no está en el catálogo, también desarrollo herramientas a medida.",
       hero_btn_tools: "Ver el catálogo",
       hero_btn_get: "Empezar la prueba de 7 días",
       hero_note: "$9.99 al mes · 7 días gratis · funciona en Revit 2022 hasta 2026",
@@ -206,11 +206,11 @@
       plan_annual_save: "Dos meses gratis",
 
       price_included: "Incluido en todos los planes",
-      price_f1: "Todo el catálogo — Arquitectura, Estructuras, MEP, Control de calidad y Vistas",
+      price_f1: "Todo el catálogo: Arquitectura, Estructuras, MEP, Control de calidad y Vistas",
       price_f2: "Revit 2022, 2023, 2024, 2025 y 2026",
       price_f3: "Un instalador que detecta tus versiones y se instala en cada una",
       price_f4: "Las herramientas nuevas aparecen en tu ribbon sin costo extra",
-      price_f5: "Un equipo a la vez — mueve la licencia cuando cambies de laptop",
+      price_f5: "Un equipo a la vez: mueve la licencia cuando cambies de laptop",
       price_cta: "Empezar la prueba de 7 días",
       price_fineprint: "Los 7 días de prueba son gratis. Se pide una tarjeta para empezarla y no se cobra nada si cancelas antes del séptimo día. Las claves de licencia las emite y valida Lemon Squeezy.",
       lemon_title: "Nunca veo tu tarjeta",
@@ -235,7 +235,7 @@
       form_sending: "Enviando…",
       form_ok: "✓ Recibido. Te respondo pronto.",
       form_err: "No se pudo enviar. Escribe directo a support@aubimat.com y lo tomo desde ahí.",
-      form_pending: "El formulario aún no está conectado — mientras tanto, escribe a support@aubimat.com.",
+      form_pending: "El formulario aún no está conectado: mientras tanto, escribe a support@aubimat.com.",
       contact_direct: "O sáltate el formulario",
 
       // CTA de cierre
