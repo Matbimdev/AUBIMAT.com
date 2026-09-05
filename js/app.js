@@ -88,7 +88,7 @@
     },
     {
       disc: "quality", icon: "clashDetector_clashDetector",
-      name: { en: "Clash Detector", es: "Detector de Interferencias" },
+      name: { en: "Clash Finder", es: "Buscador de Interferencias" },
       desc: {
         en: "Finds geometric interferences between host and linked categories, with an interactive browser.",
         es: "Encuentra interferencias geométricas entre categorías del modelo y de los vínculos, con un navegador interactivo."
