@@ -135,12 +135,12 @@
           <button onclick="showSection('tools')" class="w-full sm:w-auto bg-white text-black hover:bg-gray-100 px-8 py-4 rounded-full font-bold text-lg transition-all shadow-[0_0_20px_rgba(43,184,196,0.25)] hover:shadow-[0_0_30px_rgba(43,184,196,0.45)] transform hover:-translate-y-1" data-i18n="hero_btn_tools">
             Explore the catalogue
           </button>
-          <a href="#" data-checkout class="w-full sm:w-auto text-center border border-white/30 hover:bg-white/10 text-white px-8 py-4 rounded-full font-bold text-lg transition-all backdrop-blur-sm" data-i18n="hero_btn_get">
-            Get AUBIMAT
+          <a href="#" data-checkout="monthly" class="w-full sm:w-auto text-center border border-white/30 hover:bg-white/10 text-white px-8 py-4 rounded-full font-bold text-lg transition-all backdrop-blur-sm" data-i18n="hero_btn_get">
+            Start the 7-day trial
           </a>
         </div>
 
-        <p class="text-sm text-gray-500" data-i18n="hero_note">$4.99 a month · works on Revit 2022 through 2026</p>
+        <p class="text-sm text-gray-500" data-i18n="hero_note">$9.99 a month · 7 days free · works on Revit 2022 through 2026</p>
       </div>
     </section>
 
@@ -235,86 +235,125 @@
         <div class="text-center mb-16">
           <div class="mb-4 inline-block text-brand-cyan font-semibold tracking-wider text-sm uppercase" data-i18n="price_badge">Pricing</div>
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight" data-i18n="price_title">
-            The whole catalogue, <span class="text-brand-cyan">one price</span>
+            The whole catalogue, <span class="text-brand-cyan">the plan that suits you</span>
           </h2>
           <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-gray-400" data-i18n="price_desc">
-            My best tools for every discipline, at the best price. No per-tool licences and nothing
-            more to pay when a new Revit version lands.
+            My best tools for every discipline, on whichever billing cycle suits you. No
+            per-tool licences and nothing more to pay when a new Revit version lands.
           </p>
         </div>
 
-        <div class="grid lg:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch">
 
-          <!-- Price card -->
-          <div class="rounded-3xl p-8 sm:p-10 bg-white/[0.03] border border-white/10 shadow-2xl shadow-black/50">
-            <p class="text-sm font-semibold tracking-wider uppercase text-gray-500 mb-4" data-i18n="price_plan">AUBIMAT — full catalogue</p>
-            <div class="flex items-baseline mb-2">
+          <div class="rounded-3xl p-8 bg-white/[0.03] border border-white/10 shadow-2xl shadow-black/50 flex flex-col">
+            <div class="flex items-center justify-between gap-3 min-h-[2rem] mb-4">
+              <p class="text-sm font-semibold tracking-wider uppercase text-gray-500" data-i18n="plan_monthly_name">Monthly</p>
+            </div>
+            <div class="flex items-baseline mb-3">
               <span class="text-2xl font-bold text-gray-400 self-start mt-2">$</span>
-              <span class="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-navy-light to-brand-cyan">4.99</span>
-              <span class="text-lg font-semibold text-gray-500 ml-1" data-i18n="price_period">/month</span>
+              <span class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-navy-light to-brand-cyan" data-i18n="plan_monthly_amount">9.99</span>
+              <span class="text-base font-semibold text-gray-500 ml-1" data-i18n="plan_monthly_period">/month</span>
             </div>
-            <p class="text-gray-400 mb-8" data-i18n="price_sub">Every tool in the catalogue, across every discipline.</p>
-
-            <ul class="space-y-3 mb-8">
-              <li class="flex items-start gap-3 text-gray-300">
-                <svg class="w-5 h-5 shrink-0 mt-0.5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span data-i18n="price_f1">The whole catalogue — Architecture, Structure, MEP, QC and Views</span>
-              </li>
-              <li class="flex items-start gap-3 text-gray-300">
-                <svg class="w-5 h-5 shrink-0 mt-0.5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span data-i18n="price_f2">Revit 2022, 2023, 2024, 2025 and 2026</span>
-              </li>
-              <li class="flex items-start gap-3 text-gray-300">
-                <svg class="w-5 h-5 shrink-0 mt-0.5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span data-i18n="price_f3">One installer that finds your versions and deploys to each</span>
-              </li>
-              <li class="flex items-start gap-3 text-gray-300">
-                <svg class="w-5 h-5 shrink-0 mt-0.5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span data-i18n="price_f4">New tools included as they ship</span>
-              </li>
-              <li class="flex items-start gap-3 text-gray-300">
-                <svg class="w-5 h-5 shrink-0 mt-0.5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span data-i18n="price_f5">One machine at a time — move the licence whenever you change laptop</span>
-              </li>
-            </ul>
-
-            <a href="#" data-checkout class="block text-center bg-white hover:bg-gray-100 text-black px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:-translate-y-1 shadow-lg" data-i18n="price_cta">
-              Get AUBIMAT
+            <p class="text-sm text-gray-400 mb-8" data-i18n="plan_monthly_sub">Billed every month. Cancel from your own account whenever you like.</p>
+            <a href="#" data-checkout="monthly" class="mt-auto block text-center bg-white hover:bg-gray-100 text-black px-6 py-4 rounded-full font-bold transition-all transform hover:-translate-y-1 shadow-lg" data-i18n="price_cta">
+              Start the 7-day trial
             </a>
-            <p class="mt-4 text-center text-xs text-gray-500" data-i18n="price_fineprint">
-              Cancel any month from your own account. Licence keys are issued and validated by
-              Lemon Squeezy.
-            </p>
           </div>
 
-          <!-- Lemon Squeezy trust block -->
-          <div class="rounded-3xl p-8 sm:p-10 bg-white/[0.02] border border-white/5">
-            <div class="w-12 h-12 rounded-xl bg-[#FFC233] flex items-center justify-center mb-6">
-              <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-              </svg>
+          <div class="rounded-3xl p-8 bg-white/[0.03] border border-white/10 shadow-2xl shadow-black/50 flex flex-col">
+            <div class="flex items-center justify-between gap-3 min-h-[2rem] mb-4">
+              <p class="text-sm font-semibold tracking-wider uppercase text-gray-500" data-i18n="plan_semiannual_name">6 months</p>
+              <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/30" data-i18n="plan_semiannual_save">Save $4.95</span>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-4" data-i18n="lemon_title">I never see your card</h3>
-            <p class="text-gray-400 leading-relaxed mb-8" data-i18n="lemon_desc">
-              Checkout, invoices and licence keys all go through Lemon Squeezy, a Merchant of
-              Record. They take the payment and deal with the tax; AUBIMAT only ever receives a
-              licence key to validate.
-            </p>
-            <ul class="space-y-3">
-              <li class="flex items-start gap-3 text-gray-400 text-sm">
-                <svg class="w-5 h-5 shrink-0 mt-0.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span data-i18n="lemon_b1">PCI-DSS compliant checkout — not mine to get wrong</span>
-              </li>
-              <li class="flex items-start gap-3 text-gray-400 text-sm">
-                <svg class="w-5 h-5 shrink-0 mt-0.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span data-i18n="lemon_b2">Card, PayPal and local payment methods</span>
-              </li>
-              <li class="flex items-start gap-3 text-gray-400 text-sm">
-                <svg class="w-5 h-5 shrink-0 mt-0.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                <span data-i18n="lemon_b3">Invoices and VAT handled for you</span>
-              </li>
-            </ul>
+            <div class="flex items-baseline mb-3">
+              <span class="text-2xl font-bold text-gray-400 self-start mt-2">$</span>
+              <span class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-navy-light to-brand-cyan" data-i18n="plan_semiannual_amount">54.99</span>
+              <span class="text-base font-semibold text-gray-500 ml-1" data-i18n="plan_semiannual_period">/6 months</span>
+            </div>
+            <p class="text-sm text-gray-400 mb-8" data-i18n="plan_semiannual_sub">Billed twice a year. Works out at $9.17 a month.</p>
+            <a href="#" data-checkout="semiannual" class="mt-auto block text-center bg-white hover:bg-gray-100 text-black px-6 py-4 rounded-full font-bold transition-all transform hover:-translate-y-1 shadow-lg" data-i18n="price_cta">
+              Start the 7-day trial
+            </a>
           </div>
+
+          <div class="rounded-3xl p-8 bg-white/[0.04] border border-brand-cyan/40 shadow-2xl shadow-black/50 flex flex-col">
+            <div class="flex items-center justify-between gap-3 min-h-[2rem] mb-4">
+              <p class="text-sm font-semibold tracking-wider uppercase text-gray-500" data-i18n="plan_annual_name">Yearly</p>
+              <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/30" data-i18n="plan_annual_save">Two months free</span>
+            </div>
+            <div class="flex items-baseline mb-3">
+              <span class="text-2xl font-bold text-gray-400 self-start mt-2">$</span>
+              <span class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-navy-light to-brand-cyan" data-i18n="plan_annual_amount">99.99</span>
+              <span class="text-base font-semibold text-gray-500 ml-1" data-i18n="plan_annual_period">/year</span>
+            </div>
+            <p class="text-sm text-gray-400 mb-8" data-i18n="plan_annual_sub">Billed once a year. Works out at $8.33 a month.</p>
+            <a href="#" data-checkout="annual" class="mt-auto block text-center bg-white hover:bg-gray-100 text-black px-6 py-4 rounded-full font-bold transition-all transform hover:-translate-y-1 shadow-lg" data-i18n="price_cta">
+              Start the 7-day trial
+            </a>
+          </div>
+        </div>
+
+        <p class="mt-6 max-w-3xl mx-auto text-center text-xs text-gray-500" data-i18n="price_fineprint">
+          The 7-day trial is free. A card is needed to start it and nothing is charged if you
+          cancel before day seven. Licence keys are issued and validated by Lemon Squeezy.
+        </p>
+
+        <!-- What every plan includes -->
+        <div class="mt-8 max-w-6xl mx-auto rounded-3xl p-8 sm:p-10 bg-white/[0.02] border border-white/5">
+          <p class="text-sm font-semibold tracking-wider uppercase text-gray-500 mb-6" data-i18n="price_included">
+            Included on every plan
+          </p>
+          <ul class="grid sm:grid-cols-2 gap-x-10 gap-y-3">
+            <li class="flex items-start gap-3 text-gray-300">
+              <svg class="w-5 h-5 shrink-0 mt-0.5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span data-i18n="price_f1">The whole catalogue — Architecture, Structure, MEP, QC and Views</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-300">
+              <svg class="w-5 h-5 shrink-0 mt-0.5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span data-i18n="price_f2">Revit 2022, 2023, 2024, 2025 and 2026</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-300">
+              <svg class="w-5 h-5 shrink-0 mt-0.5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span data-i18n="price_f3">One installer that finds your versions and deploys to each</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-300">
+              <svg class="w-5 h-5 shrink-0 mt-0.5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span data-i18n="price_f4">New tools included as they ship</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-300">
+              <svg class="w-5 h-5 shrink-0 mt-0.5 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span data-i18n="price_f5">One machine at a time — move the licence whenever you change laptop</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Lemon Squeezy trust block -->
+        <div class="mt-8 max-w-6xl mx-auto rounded-3xl p-8 sm:p-10 bg-white/[0.02] border border-white/5">
+          <div class="w-12 h-12 rounded-xl bg-[#FFC233] flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-4" data-i18n="lemon_title">I never see your card</h3>
+          <p class="text-gray-400 leading-relaxed mb-8 max-w-3xl" data-i18n="lemon_desc">
+            Checkout, invoices and licence keys all go through Lemon Squeezy, a Merchant of
+            Record. They take the payment and deal with the tax; AUBIMAT only ever receives a
+            licence key to validate.
+          </p>
+          <ul class="grid sm:grid-cols-3 gap-x-10 gap-y-3">
+            <li class="flex items-start gap-3 text-gray-400 text-sm">
+              <svg class="w-5 h-5 shrink-0 mt-0.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span data-i18n="lemon_b1">PCI-DSS compliant checkout — not mine to get wrong</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-400 text-sm">
+              <svg class="w-5 h-5 shrink-0 mt-0.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span data-i18n="lemon_b2">Card, PayPal and local payment methods</span>
+            </li>
+            <li class="flex items-start gap-3 text-gray-400 text-sm">
+              <svg class="w-5 h-5 shrink-0 mt-0.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span data-i18n="lemon_b3">Invoices and VAT handled for you</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

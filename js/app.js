@@ -7,10 +7,16 @@
   // Configuration
   // -------------------------------------------------------------------------
 
-  // TODO: paste the Lemon Squeezy checkout URL for the AUBIMAT subscription,
-  // e.g. "https://aubimat.lemonsqueezy.com/checkout/buy/<uuid>".
-  // While it is empty every "Get AUBIMAT" button falls back to the mailto below.
-  const CHECKOUT_URL = "";
+  // TODO: paste the Lemon Squeezy checkout URL of each variant of the AUBIMAT
+  // subscription, e.g. "https://aubimat.lemonsqueezy.com/checkout/buy/<uuid>".
+  // The store is not published yet, so every plan still falls back to the mailto
+  // below. A button carrying a bare data-checkout uses DEFAULT_PLAN.
+  const CHECKOUT_URLS = {
+    monthly: "",
+    semiannual: "",
+    annual: ""
+  };
+  const DEFAULT_PLAN = "monthly";
   const CONTACT_EMAIL = "support@aubimat.com";
 
   // Web3Forms access key for support@aubimat.com. Public by design — it only
@@ -310,10 +316,12 @@
   // Checkout / contact wiring
   // -------------------------------------------------------------------------
   function initCheckoutLinks() {
-    const href = CHECKOUT_URL || "mailto:" + CONTACT_EMAIL + "?subject=AUBIMAT";
+    const fallback = "mailto:" + CONTACT_EMAIL + "?subject=AUBIMAT";
     document.querySelectorAll("[data-checkout]").forEach(a => {
-      a.setAttribute("href", href);
-      if (CHECKOUT_URL) {
+      const plan = a.getAttribute("data-checkout") || DEFAULT_PLAN;
+      const url = CHECKOUT_URLS[plan] || "";
+      a.setAttribute("href", url || fallback);
+      if (url) {
         a.setAttribute("target", "_blank");
         a.setAttribute("rel", "noopener");
       }
